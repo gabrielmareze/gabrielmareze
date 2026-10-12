@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+:root{--bg:#0c3b92;--deep:#082c70;--ink:#f5f9ff;--soft:#bcd3f5;--line:rgba(245,249,255,.85);--g1:rgba(245,249,255,.07);--g2:rgba(245,249,255,.16);--acc:#9fd0ff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a3380;--deep:#06235a}}
+:root[data-theme="dark"]{--bg:#0a3380;--deep:#06235a}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background-color:var(--bg);color:var(--ink);font:400 17px/1.6 Barlow,system-ui,sans-serif;background-image:linear-gradient(var(--g2) 1px,transparent 1px),linear-gradient(90deg,var(--g2) 1px,transparent 1px),linear-gradient(var(--g1) 1px,transparent 1px),linear-gradient(90deg,var(--g1) 1px,transparent 1px);background-size:120px 120px,120px 120px,24px 24px,24px 24px}
+h1,h2,h3{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:600;line-height:1.05;margin:0}
+a{color:var(--ink)}:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.mono,.sh,.sh2,dt,.tb4 div,.tb div,.cap,.note{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+#bar{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--acc);transform:scaleX(0);transform-origin:left;z-index:9}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--deep);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+nav strong{font:700 22px "Barlow Condensed",sans-serif;letter-spacing:.04em;text-decoration:none}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;font-size:15px;color:var(--soft);position:relative}
+nav ul a::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+nav ul a:hover{color:var(--ink)}nav ul a:hover::after{transform:scaleX(1)}
+.hero{padding:64px 0 40px}.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.eyebrow{font:500 13px "IBM Plex Mono",monospace;color:var(--acc);margin-bottom:14px}
+.hero h1{font-size:clamp(52px,8.5vw,108px);font-weight:700}
+.ln{display:block;overflow:hidden;padding-bottom:.08em}.ln i{display:block;font-style:normal;transform:translateY(105%);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+.ln:nth-child(2) i{animation-delay:.15s}
+@keyframes up{to{transform:none}}
+.dim{position:relative;height:18px;margin:18px 0;display:flex;align-items:center;font:12px "IBM Plex Mono",monospace;color:var(--soft);width:0;animation:grow 1.2s .6s ease-out forwards;white-space:nowrap;overflow:hidden}
+.dim::before{content:"";flex:1;border-top:1px solid var(--soft);margin-right:10px}.dim span{flex:none}
+@keyframes grow{to{width:100%}}
+.lead{font-size:21px;max-width:34ch;color:var(--soft);margin:0 0 26px;opacity:0;animation:fade .8s .9s forwards}
+.cta{opacity:0;animation:fade .8s 1.1s forwards}@keyframes fade{to{opacity:1}}
+.btn{display:inline-block;border:1px solid var(--line);padding:10px 20px;text-decoration:none;font-weight:500;margin:0 10px 10px 0;transition:background .25s,color .25s,transform .25s}
+.btn.solid{background:var(--ink);color:var(--deep)}.btn:hover{background:var(--acc);color:var(--deep);border-color:var(--acc);transform:translateY(-2px)}
+.drawing{border:1px solid var(--line);padding:12px;background:rgba(8,44,112,.35)}.drawing svg{width:100%;height:auto;display:block}
+.draw path,.draw rect,.draw circle{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.4s .3s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.tb{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-top:0;font-size:12px;color:var(--soft)}
+.tb div{padding:6px 10px;border-right:1px solid var(--line)}.tb div:last-child{border:0}.tb b,.tb4 b{display:block;color:var(--ink);font-weight:500;font-size:13px}
+.tb4{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));border:1px solid var(--line);font-size:12px;color:var(--soft);margin:20px 0}
+.tb4 div{padding:8px 12px;border-right:1px solid var(--line)}.tb4 div:last-child{border:0}
+.tb4.four{grid-template-columns:repeat(4,1fr);margin-bottom:0}.tb4.three{grid-template-columns:repeat(3,1fr);margin-top:0;border-top:0}.card:not(:has(.ph)) h3{font-size:34px}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border:1px solid var(--line);margin:0 0 8px}
+.stats div{padding:16px 18px;border-right:1px solid var(--line);color:var(--soft);font-size:15px}.stats div:last-child{border:0}
+.stats b{display:block;font:600 44px "Barlow Condensed",sans-serif;color:var(--ink)}
+section{padding:64px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:30px}.sec-head h2{font-size:44px}.sec-head span{flex:1;border-bottom:1px dashed var(--soft);transform:translateY(-6px)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.card{background:var(--bg);border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;text-decoration:none;position:relative;padding:14px;transition:background .3s}
+.card:hover{background:#12489f}.card .cb{padding-top:6px}.ph+.cb{padding-top:14px}
+.sh,.sh2{display:flex;justify-content:space-between;font-size:11px;color:var(--soft);margin-bottom:10px}
+.ph{overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:#fff}.ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.card:hover .ph img{transform:scale(1.07)}
+.cb{padding:14px 2px 8px;flex:1}.card h3{font-size:25px;margin-bottom:6px}.card p{margin:0 0 12px;font-size:15.5px;color:var(--soft)}
+dl{margin:0;font-size:12px;display:grid;grid-template-columns:44px 1fr;gap:3px 8px}dt{color:var(--acc)}dd{margin:0;color:var(--soft)}
+.go{align-self:flex-start;border:1px solid var(--line);padding:7px 14px;font-size:14px;font-weight:500;margin-top:8px;position:relative;overflow:hidden;z-index:0}
+.go::before{content:"";position:absolute;inset:0;background:var(--ink);transform:translateX(-101%);transition:transform .35s;z-index:-1}
+.card:hover .go{color:var(--deep)}.card:hover .go::before{transform:none}
+.extra{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;margin-top:20px}
+.extra article,.extra a.lk{border:1px solid var(--line);padding:18px;background:rgba(8,44,112,.4);transition:transform .3s,background .3s}.extra article:hover,.extra a.lk:hover{transform:translateY(-4px);background:rgba(18,72,159,.5)}
+.more{margin:28px 0 0;display:flex;align-items:center;gap:16px;flex-wrap:wrap;color:var(--soft)}.more .btn{margin:0}.extra a.lk{text-decoration:none;display:flex;flex-direction:column;align-items:flex-start}.extra a.lk .go{margin-top:12px}.np{width:100%;height:100%;display:grid;place-items:center;font:12px "IBM Plex Mono",monospace;color:var(--soft);background:radial-gradient(circle,transparent 0 27%,rgba(245,249,255,.35) 27.5% 28.5%,transparent 29% 45%,rgba(245,249,255,.22) 45.5% 46.5%,transparent 47%),linear-gradient(rgba(245,249,255,.3),rgba(245,249,255,.3)) center/1px 100% no-repeat,linear-gradient(rgba(245,249,255,.3),rgba(245,249,255,.3)) center/100% 1px no-repeat,var(--deep)}.np span{background:var(--deep);padding:2px 8px}.extra h3{font-size:24px}.extra .m{font:12px "IBM Plex Mono",monospace;color:var(--acc);margin:4px 0 8px}.extra p{margin:0;font-size:15.5px;color:var(--soft)}
+.job{display:grid;grid-template-columns:200px 1fr;gap:28px;padding:24px 0;border-bottom:1px dashed var(--soft)}.job:last-child{border:0}
+.job .w{color:var(--soft);font-size:15px}.job h3{font-size:28px}.job .o{color:var(--acc);margin:2px 0 10px;font-weight:500}
+ul.t{margin:0;padding-left:18px}ul.t li{margin:5px 0;max-width:70ch}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}.skills div{border:1px solid var(--line);padding:16px}.skills h3{font-size:22px;margin-bottom:6px}.skills p{margin:0;font-size:15px;color:var(--soft)}
+.contact{font-size:24px}.contact a{display:inline-block;margin:0 26px 8px 0}
+footer.site{padding:26px 0 40px;border-top:1px solid var(--line);font-size:14px;color:var(--soft)}
+.view{display:none}.view.on{display:block;animation:wipe .7s cubic-bezier(.2,.8,.2,1)}
+@keyframes wipe{from{clip-path:inset(0 0 100% 0);opacity:.4}to{clip-path:inset(0);opacity:1}}
+.proj.wide{max-width:1120px}.proj{max-width:900px;margin:0 auto;padding:40px 24px 64px}
+.back{font:500 13px "IBM Plex Mono",monospace;text-decoration:none;color:var(--acc);display:inline-block;margin-bottom:18px}.back:hover{text-decoration:underline}
+.pt{font-size:clamp(40px,7vw,72px);margin:6px 0 8px}.role{color:var(--soft);margin:0}
+.note{font-size:12px;color:var(--soft);border-left:2px solid var(--acc);padding:4px 12px;margin:0 0 8px}
+.proj h2{font-size:32px;margin:44px 0 12px;padding-top:18px;border-top:1px solid var(--line)}.proj p{max-width:68ch}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin:28px 0 6px}
+.gal figure{margin:0;border:1px solid var(--line);background:#fff;overflow:hidden}.gal img{width:100%;display:block;height:100%;max-height:420px;object-fit:cover}
+.cap{font-size:12px;color:var(--soft)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:56px;border-top:1px solid var(--line);padding-top:18px;flex-wrap:wrap}.pn a{text-decoration:none;border:1px solid var(--line);padding:10px 16px;max-width:48%;transition:background .25s,color .25s}.pn a:hover{background:var(--ink);color:var(--deep)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}.rv.in{opacity:1;transform:none}
+.gal figure.rv{clip-path:inset(0 100% 0 0);transition:clip-path .9s cubic-bezier(.2,.8,.2,1),opacity .4s;transition-delay:var(--d,0s)}.gal figure.rv.in{clip-path:inset(0)}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.hero .wrap{grid-template-columns:1fr}}
+@media(max-width:620px){.tb4.four,.tb4.three{grid-template-columns:1fr 1fr}.tb4 div{border-bottom:1px solid var(--line)}.hero h1{font-size:52px}.grid{grid-template-columns:1fr}.job{grid-template-columns:1fr;gap:6px}nav strong{display:none}nav ul{gap:14px}.tb{grid-template-columns:1fr}.tb div{border-right:0;border-bottom:1px solid var(--line)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.ln i{transform:none}.dim{width:100%}.lead,.cta,.rv{opacity:1;transform:none}.gal figure.rv{clip-path:none}.draw path,.draw rect,.draw circle{stroke-dashoffset:0}html{scroll-behavior:auto}}
+
+.err{padding:24px;background:#fff;color:#082c70;margin:0;font:16px/1.5 sans-serif}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<nav><div class="wrap"><strong id="brand"></strong><ul><li><a href="#projects">Projects</a></li><li><a href="#/all">All projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+
+<main id="home" class="view on">
+<header class="hero"><div class="wrap">
+<div>
+<div class="eyebrow" id="eyebrow"></div>
+<h1 id="h1"></h1>
+<div class="dim"><span>SCALE 1:1 &nbsp; TOL +/-0.005</span></div>
+<p class="lead" id="lead"></p>
+<div class="cta"><a class="btn solid" href="#projects">View projects</a><a class="btn" id="mailbtn" href="#">Email me</a></div>
+</div>
+<div><div class="drawing"><svg class="draw" viewBox="0 0 520 330" fill="none" stroke="#f5f9ff" stroke-width="1.6" role="img" aria-label="Dimensioned drawing of a mounting bracket">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#f5f9ff" stroke="none" style="stroke-dasharray:none;stroke-dashoffset:0"/></marker></defs>
+<rect x="90" y="80" width="340" height="170" rx="14" pathLength="1"/>
+<circle cx="130" cy="120" r="14" pathLength="1"/><circle cx="390" cy="120" r="14" pathLength="1"/>
+<circle cx="130" cy="210" r="14" pathLength="1"/><circle cx="390" cy="210" r="14" pathLength="1"/>
+<rect x="200" y="140" width="120" height="50" rx="25" pathLength="1"/>
+<line x1="60" y1="165" x2="460" y2="165" stroke-width=".8" stroke-dasharray="14 4 2 4" style="animation:none;stroke-dashoffset:0"/>
+<line x1="260" y1="60" x2="260" y2="290" stroke-width=".8" stroke-dasharray="14 4 2 4" style="animation:none;stroke-dashoffset:0"/>
+<g stroke-width="1" style="stroke-dasharray:none">
+<line x1="90" y1="285" x2="430" y2="285" marker-start="url(#a)" marker-end="url(#a)" style="animation:none;stroke-dashoffset:0;stroke-dasharray:none"/>
+<line x1="90" y1="250" x2="90" y2="292" style="animation:none;stroke-dashoffset:0;stroke-dasharray:none"/><line x1="430" y1="250" x2="430" y2="292" style="animation:none;stroke-dashoffset:0;stroke-dasharray:none"/>
+<line x1="470" y1="80" x2="470" y2="250" marker-start="url(#a)" marker-end="url(#a)" style="animation:none;stroke-dashoffset:0;stroke-dasharray:none"/>
+<line x1="430" y1="80" x2="477" y2="80" style="animation:none;stroke-dashoffset:0;stroke-dasharray:none"/><line x1="430" y1="250" x2="477" y2="250" style="animation:none;stroke-dashoffset:0;stroke-dasharray:none"/>
+</g>
+<g fill="#f5f9ff" stroke="none" font-family="Barlow,sans-serif" font-size="15">
+<text x="238" y="278">340</text><text x="480" y="170" transform="rotate(90 480 170)" text-anchor="middle">170</text>
+<text x="146" y="104">Ø 28</text><text x="214" y="132" font-size="13">SLOT 120 x 50</text>
+</g>
+</svg></div>
+<div class="tb"><div>Drawn by<b id="drawn"></b></div><div>Material<b>Aluminum 6061</b></div><div>Scale<b>1 : 2</b></div></div></div>
+</div>
+<div class="wrap" style="display:block;margin-top:40px"><div class="tb4 four" id="tb1"></div><div class="tb4 three" id="tb2"></div></div></header>
+<div class="wrap"><div class="stats" id="stats"></div></div>
+
+<section id="projects"><div class="wrap">
+<div class="sec-head"><h2>Selected Projects</h2><span></span></div>
+<div class="grid" id="grid"></div>
+<p class="more"><a class="btn solid" href="#/all">View all projects</a><span>Everything else I have worked on, ordered by what I find most interesting.</span></p>
+</div></section>
+
+<section id="skills"><div class="wrap"><div class="sec-head"><h2>Skills</h2><span></span></div><div class="skills" id="skillgrid"></div></div></section>
+<section id="experience"><div class="wrap"><div class="sec-head"><h2>Experience</h2><span></span></div><div id="jobs"></div></div></section>
+<section id="contact"><div class="wrap"><div class="sec-head"><h2>Contact</h2><span></span></div><p class="contact" id="contactp"></p></div></section>
+<footer class="site"><div class="wrap" id="foot"></div></footer>
+</main>
+<main id="project" class="view"><div class="proj" id="pbody"></div></main>
+
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const slug=t=>t.toLowerCase().replace(/&/g,' and ').normalize('NFKD').replace(/[^\w\s-]/g,'').trim().replace(/[\s_]+/g,'-').replace(/-+/g,'-');
+const yes=v=>/^(yes|true|y)$/i.test(v||'');
+function parse(t){const o={site:{},stats:[],skills:[],jobs:[],projects:[]};let type=null,cur=null,key=null,sec=null;
+for(const raw of t.split(/\r?\n/)){const line=raw.trim();
+ if(!line){key=null;continue}
+ if(raw[0]==='#')continue;
+ let m=line.match(/^\[(\w+)\]$/);
+ if(m&&raw[0]==='['){type=m[1].toLowerCase();key=null;sec=null;
+  if(type==='site')cur=o.site;else if(type==='job'){cur={items:[]};o.jobs.push(cur)}else if(type==='project'){cur={sections:[]};o.projects.push(cur)}else cur=null;continue}
+ if(type==='stats'||type==='skills'){const a=line.split('|');(type==='stats'?o.stats:o.skills).push([a[0].trim(),a.slice(1).join('|').trim()]);continue}
+ if(!cur)continue;
+ if(line.startsWith('- ')){const v=line.slice(2).trim();if(type==='project'){if(!sec){sec={h:'',items:[]};cur.sections.push(sec)}sec.items.push(v)}else cur.items.push(v);key='*b';continue}
+ m=line.match(/^([a-z_]+):\s*(.*)$/);
+ if(m&&raw[0]!==' '&&raw[0]!=='\t'){key=m[1];if(key==='section'&&type==='project'){sec={h:m[2],items:[]};cur.sections.push(sec);key=null}else cur[key]=m[2];continue}
+ if(key==='*b'){const a=type==='project'?sec.items:cur.items;a[a.length-1]+=' '+line;continue}
+ if(key)cur[key]+=' '+line}
+return o}
+let S,PRJ,HOME,PG;
+fetch('content.txt?'+Date.now()).then(r=>{if(!r.ok)throw 0;return r.text()}).then(t=>{S=parse(t);init()}).catch(()=>{document.body.insertAdjacentHTML('afterbegin','<p class="err">Could not load content.txt. If you opened index.html straight from your computer, view the site through GitHub Pages instead, or run a local server in this folder.</p>')});
+const card=(p,l)=>{const a=p.page,t=a?'a':'div';return `<${t} class="card rv"${a?` href="#/project/${p.slug}"`:''}><div class="sh"><span>${esc(l)}</span><span>${esc(p.type)}</span></div>${p.imgs.length?`<div class="ph"><img src="images/${esc(p.imgs[0])}" alt="${esc(p.title)}" loading="lazy"></div>`:''}<div class="cb"><h3>${esc(p.title)}</h3><p>${esc(p.summary)}</p><dl>${p.org?`<dt>Org</dt><dd>${esc(p.org)}</dd>`:''}${p.tools?`<dt>Tools</dt><dd>${esc(p.tools)}</dd>`:''}</dl></div>${a?'<span class="go">View project</span>':''}</${t}>`};
+function init(){const s=S.site;
+ PRJ=S.projects;PRJ.forEach(p=>{p.slug=p.slug||slug(p.title||'');p.imgs=(p.images||'').split(',').map(x=>x.trim()).filter(Boolean);p.main=yes(p.main);p.ill=yes(p.illustrative);p.page=!!(p.overview||p.sections.some(x=>x.items.length))});
+ HOME=PRJ.filter(p=>p.main);PG=PRJ.filter(p=>p.page);
+ document.title=(s.name||'Portfolio')+' | Portfolio';$('#brand').textContent=(s.name||'').toUpperCase();
+ $('#eyebrow').textContent=s.eyebrow||'';$('#h1').innerHTML=(s.headline||'').split('|').map(x=>`<span class="ln"><i>${esc(x.trim())}</i></span>`).join('');
+ $('#lead').textContent=s.intro||'';$('#drawn').textContent=s.name||'';$('#mailbtn').href='mailto:'+(s.email||'');
+ const cell=(a,b)=>`<div>${a}<b>${esc(b)}</b></div>`;
+ $('#tb1').innerHTML=cell('Name',s.name)+cell('Discipline',s.discipline)+cell('Based in',s.based)+cell('Status',s.status);
+ $('#tb2').innerHTML=cell('Education',s.education)+cell('Tools',s.tools)+cell('Sheet',s.sheet);
+ $('#stats').innerHTML=S.stats.map(([n,l])=>{const m=n.match(/^(\d+)(\D*)$/);return `<div class="rv"><b${m?` data-n="${m[1]}" data-s="${esc(m[2])}"`:''}>${m?0:esc(n)}</b>${esc(l)}</div>`}).join('');
+ $('#grid').innerHTML=HOME.map((p,i)=>card(p,`Sheet ${i+1} of ${HOME.length}`)).join('');
+ $('#skillgrid').innerHTML=S.skills.map(([h,t])=>`<div class="rv"><h3>${esc(h)}</h3><p>${esc(t)}</p></div>`).join('');
+ $('#jobs').innerHTML=S.jobs.map(j=>`<div class="job rv"><div class="w">${esc(j.when)}<br>${esc(j.place)}</div><div><h3>${esc(j.title)}</h3><div class="o">${esc(j.org)}</div>${j.items.length?`<ul class="t">${j.items.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}</div></div>`).join('');
+ const ln=(s.linkedin||'').replace(/^(?!https?:)/,'https://');
+ $('#contactp').innerHTML=`${esc(s.contact_line)}<br><a href="mailto:${esc(s.email)}">${esc(s.email)}</a>${s.linkedin?`<a href="${esc(ln)}">LinkedIn</a>`:''}`;
+ $('#foot').textContent=s.footer||'';
+ watch($('#home'));route()}
+const all=()=>`<a class="back" href="#projects">Back to home</a><h1 class="pt">All projects</h1><p class="role">Ordered by what I find most interesting. Entries with a button have their own page.</p><div class="grid" style="margin-top:28px">${PRJ.map((p,i)=>card(p,`Sheet ${i+1} of ${PRJ.length}`)).join('')}</div>`;
+function page(p){const i=PG.indexOf(p),a=PG[(i+PG.length-1)%PG.length],b=PG[(i+1)%PG.length];
+const sh=p.main?`Sheet ${HOME.indexOf(p)+1} of ${HOME.length}`:`Sheet ${PRJ.indexOf(p)+1} of ${PRJ.length}`;
+const cells=[['Role',p.role],['Period',p.period],['Org',p.org],['Tools',p.tools]].filter(c=>c[1]).map(c=>`<div>${c[0]}<b>${esc(c[1])}</b></div>`).join('');
+return `<a class="back" href="#projects">Back to projects</a><div class="sh2"><span>${sh}</span><span>${esc(p.type)}</span></div><h1 class="pt">${esc(p.title)}</h1>
+${cells?`<div class="tb4">${cells}</div>`:''}${p.note?`<p class="note">${esc(p.note)}</p>`:''}
+${p.overview?`<h2>Overview</h2><p>${esc(p.overview)}</p>`:''}
+${p.imgs.length?`<div class="gal">${p.imgs.map(k=>`<figure class="rv"><img src="images/${esc(k)}" alt="${esc(p.title)}"></figure>`).join('')}</div>`:''}${p.ill?'<p class="cap">* Illustrative images of similar complexity. Proprietary design images are omitted under NDA.</p>':''}
+${p.sections.filter(g=>g.items.length).map(g=>`<h2 class="rv">${esc(g.h||'Highlights')}</h2><ul class="t">${g.items.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>`).join('')}
+${p.outcome?`<h2>Outcome</h2><p>${esc(p.outcome)}</p>`:''}
+<div class="pn"><a href="#/project/${a.slug}">Previous: ${esc(a.title)}</a><a href="#/project/${b.slug}">Next: ${esc(b.title)}</a></div>`}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');const n=e.target.querySelector('[data-n]');if(n)count(n);io.unobserve(e.target)}}),{threshold:.12});
+function watch(root){root.querySelectorAll('.rv').forEach((el,i)=>{el.style.setProperty('--d',(i%3)*.12+'s');io.observe(el)})}
+function count(n){const t=+n.dataset.n,s=n.dataset.s||'',t0=performance.now();(function f(now){const k=Math.min(1,(now-t0)/1400);n.textContent=Math.round(t*(1-Math.pow(1-k,3)))+(k==1?s:'');if(k<1)requestAnimationFrame(f)})(t0)}
+function show(id){document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));const v=$('#'+id);void v.offsetWidth;v.classList.add('on')}
+function route(){const h=location.hash,m=h.match(/^#\/project\/([\w-]+)/);
+if(h==='#/all'){$('#pbody').className='proj wide';$('#pbody').innerHTML=all();show('project');scrollTo(0,0);watch($('#pbody'));return}
+if(m){const p=PG.find(x=>x.slug==m[1]);if(p){$('#pbody').className='proj';$('#pbody').innerHTML=page(p);show('project');scrollTo(0,0);watch($('#pbody'));return}}
+if(!$('#home').classList.contains('on'))show('home');const el=h.length>1&&!h.startsWith('#/')?document.getElementById(h.slice(1)):null;
+if(el)setTimeout(()=>el.scrollIntoView(),30);else scrollTo(0,0)}
+addEventListener('hashchange',()=>{if(S)route()});
+addEventListener('scroll',()=>{const d=document.documentElement;$('#bar').style.transform=`scaleX(${scrollY/Math.max(1,d.scrollHeight-innerHeight)})`},{passive:true});
+</script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+# =====================================================================
+# CONTENT FILE: edit this file to change anything on your website.
+# No coding needed. Just change the text after the colons.
+#
+# RULES
+#  - Lines starting with # are notes and are ignored.
+#  - Each block starts with a heading in [square brackets].
+#  - Write "key: value" on one line. Long text can stay on one long line.
+#  - Bullets start with "- ".
+#  - Pictures: upload them to the "images" folder, then list the file
+#    names after "images:" separated by commas. No pictures? Leave it out.
+#  - Projects show in the order they appear below. Put "main: yes" on the
+#    ones you want on the first page. The rest show on the All projects page.
+#  - A project gets its own page only if it has an "overview:" or bullets.
+#  - To add a project: copy a whole [project] block, paste it where you
+#    want it to appear, and change the text.
+#  - To remove something: delete its block.
+# =====================================================================
+
+[site]
+name: Gabriel Mareze
+eyebrow: Mechanical engineer
+headline: From sketch | to production.
+intro: I design hardware from first sketch to manufacturable part, from satellite brackets to consumer products.
+discipline: Mechanical Engineering
+based: San Francisco, CA
+status: Engineering Intern, Astranis
+education: UCF, B.S. ME, Dec 2027
+tools: SolidWorks, Ansys, MATLAB, Python
+sheet: 01 of 01, Rev C, Oct 2026
+email: gabrielmareze@gmail.com
+linkedin: linkedin.com/in/gabrielmareze
+contact_line: Open to aerospace, robotics, and advanced hardware internships.
+footer: Gabriel Mareze, Mechanical Engineering, University of Central Florida
+
+# Numbers on the first page. Format: number | label (a + after the number is fine)
+[stats]
+27 | products designed
+250+ | SolidWorks components
+50+ | manufacturing drawings
+35+ | prototypes built
+9 | manufacturing vendors
+
+# Format: heading | text
+[skills]
+CAD and software | SolidWorks (1650 hrs), Ansys, MATLAB, Python, OpenRocket, Excel
+Engineering | GD&T, tolerance stack-up, DFM, FEA, PID control
+Fabrication | Injection molding, CNC machining, turning, sheet metal, SLA/FDM, rotomolding, laser cutting
+Other | Rapid prototyping, material selection, technical drawing, client communication
+
+[job]
+title: Mechanical Engineering Intern
+org: Astranis Space Technologies, Spacecraft Configuration Team
+when: Aug 2026 to present
+place: San Francisco, CA
+- Cleared flight hardware for procurement by drafting and presenting Critical Design Reviews to directors and senior engineers.
+- Own 50+ waveguide support brackets across 2 satellite configurations, designing and analyzing aluminum and PEEK brackets in Ansys FEA.
+- Own Reaction Wheel Test Fixtures, a 3D printed fixture that positions calibrated magnets at precise Gauss levels from a Hall-effect sensor.
+- Manage multi-subsystem SolidWorks top-level assemblies and release parts through Arena PLM.
+- Wrote and released company-wide Python SolidWorks macros that auto-fillet large parts and flag broken fillet features.
+- Designed DEV and Flight PCB enclosures for thermal performance.
+
+[job]
+title: Product Development Engineer Associate
+org: Design Launchers, LLC
+when: Jul 2025 to Aug 2026
+place: Orlando, FL
+- Designed and managed 27 products and 250+ SolidWorks components across consumer, medical, and industrial applications; 12 products advanced to active manufacturing.
+- Created and reviewed 50+ manufacturing drawings using datums, tolerances, and GD&T.
+- Built 35+ mechanical and electromechanical prototypes with 3D printing, laser cutting, machining, and sheet metal.
+- Worked with 9 vendors across CNC, sheet metal, injection molding, and additive manufacturing.
+
+[job]
+title: B.S. Mechanical Engineering
+org: University of Central Florida
+when: Expected Dec 2027
+place: Orlando, FL
+- GPA 3.65.
+
+# =====================================================================
+# PROJECTS (in the order you want them shown)
+# =====================================================================
+
+[project]
+title: Autonomous Warehouse Robot Fleet
+main: yes
+type: Work
+summary: Root-caused chassis instability and redesigned a fleet robot that had no room for extra structure.
+org: Design Launchers, LLC
+tools: SolidWorks, tolerance analysis, GD&T
+role: Product Development Engineer Associate
+period: 2025 to Present
+images: warehouse-robot-1.jpg, warehouse-robot-2.jpg
+illustrative: yes
+note: Paid client project through Design Launchers, LLC. Due to NDA restrictions, images and proprietary design details have been omitted.
+overview: A year-long collaborative project developing the full physical architecture of a networked warehouse navigation robot fleet, working directly alongside the client’s engineering team at Design Launchers, LLC. Scope included root-cause failure analysis, structural redesign, tolerance stack management, and complete manufacturing documentation for a highly constrained chassis with essentially no margin for additional structure.
+section: Chassis instability root cause and redesign
+- Root-caused excessive roll during driving tests to an unbalanced 4-cell battery layout and undersized caster wheels failing under dynamic load
+- Redesigned to a symmetric 2-2 battery split, distributing mass evenly without adding structure or increasing chassis footprint
+- Routed a C-section metal extrusion through the chassis to maximize second moment of area at wheel support interfaces; coordinated routing around a dense existing component layout with no margin for error
+section: Drive wheel constraint system
+- Identified outward splay of drive wheels under load as a navigation accuracy failure mode causing positional drift
+- Designed custom constraint brackets with auxiliary caster wheels to redistribute load away from primary drive wheels and eliminate splay under operating conditions
+section: Tolerance stack and manufacturing documentation
+- Managed tolerance stacks across a large number of interdependent components on a chassis where stack-up errors had no room to be absorbed
+- Generated full manufacturing drawing packages for all physical components; all drawings currently in production
+outcome: All physical components in active manufacturing. Redesigned chassis and constraint brackets resolved both the instability and wheel splay identified during testing; robot has completed structured driving validation.
+
+[project]
+title: NASA Student Launch: Air-Brakes
+main: yes
+type: Club
+summary: Closed-loop PID air-brakes on an ESP32 that trim a rocket toward a 4,850 ft apogee.
+org: NASA Student Launch, Project Zenith
+tools: C++, ESP32, SolidWorks, PID control
+role: Avionics Specialist, Controls Sub-team
+period: Fall 2024 to Spring 2025
+images: zenith-1.jpg, zenith-2.jpg
+overview: Project Zenith competed in the NASA Student Launch Initiative, targeting a precise apogee of 4,850 ft AGL. As Avionics Specialist on the Controls sub-team, I owned the full development cycle of the autonomous air-brake system: closed-loop PID control, embedded firmware, flight electronics, and mechanical redesign following a sub-scale failure. The system used real-time barometric altitude feedback to deploy four drag-modulating flaps and trim the vehicle’s apogee within feet of target.
+section: PID control system development
+- Implemented full PID control logic in C++ on an ESP32, tuning gains against simulated altitude profiles before flight
+- Integrated a barometric altimeter as the feedback sensor; the controller computed flap deflection commands each loop cycle to drive predicted apogee toward target
+- Added SD card data logging to capture in-flight state for post-flight analysis and gain refinement
+section: Sub-scale failure root cause and redesign
+- Root-caused in-flight control system shutdown to a battery connection that vibrated loose under launch loads
+- Redesigned the electronics housing in SolidWorks to consolidate all components on one side, eliminating wire routing through the flap mechanism
+- Switched to hard-wired connections and strain-relieved harnesses to prevent recurrence under full-scale vibration
+section: Electronics fabrication and system documentation
+- Sourced and quoted all flight electronics; soldered flight hardware and assembled the avionics bay
+- Contributed to PDR and CDR technical reports covering control system design, electronics, and test procedures per NASA safety standards
+outcome: The redesigned system achieved repeatable, precise drag modulation validated across subscale and full-scale flights. Rocket successfully launched and recovered in summer 2025 with the air-brake system performing as designed.
+
+[project]
+title: Automated Card Dealer
+main: yes
+type: Personal
+summary: Counts, deals, and stacks cards using servos, a stepper, and IR sensing.
+org: Personal project
+tools: SolidWorks, ESP32, PCA9685, FDM printing
+role: Solo Project
+period: 2025 to Present
+images: card-dealer-1.jpg, card-dealer-2.jpg
+overview: A fully functional automated card dealer built from scratch as a personal mechatronics project. The system handles the complete card-handling sequence; count, deal, and stack; using a custom mechanical architecture driven by a mixed servo and stepper motor system coordinated through a PCA9685 PWM controller. Housing is fully 3D-printed, control runs on an ESP32, and the user interface is an OLED display with physical input.
+section: Multi-actuator coordination and embedded control
+- Coordinated multiple servo channels and a stepper motor through a PCA9685 PWM controller driven by an ESP32, managing timing and sequencing across the full deal-shuffle cycle
+- Implemented IR sensor feedback to detect card presence and count; sensor state triggers motor actions and prevents mis-deals
+- Tuned servo travel limits and stepper microstepping for reliable card handling across normal card thickness variation
+section: Mechanical architecture
+- Designed the full card path mechanism; feed, eject, and deal routing; around FDM printing tolerances and available motor torque
+- Iterated housing geometry through multiple print-test cycles; key challenge was achieving consistent grip force without damaging card faces
+- All structural parts parametrically modeled in SolidWorks with print orientation, wall thickness, and fastener access considered from the first version
+section: User interface
+- Menu-driven OLED interface for selecting game type, player count, and deal order; input handled through physical buttons wired to ESP32 GPIO
+outcome: System reliably completes deal and shuffle cycles across standard card decks. Ongoing work targets shuffle consistency and wireless control via the ESP32’s WiFi interface.
+
+[project]
+title: Reaction Wheel Test Fixture
+main: yes
+type: Work
+summary: A 3D printed fixture that places calibrated magnets at precise Gauss levels to find a sensor switching threshold.
+org: Astranis Space Technologies
+tools: SolidWorks, 3D printing, Altium
+role: Mechanical Engineering Intern
+period: Aug 2026 to Present
+overview: I own the test fixtures used for reaction wheel testing. The fixture positions calibrated magnets at precise Gauss levels from a PCB-mounted Hall-effect sensor to find the sensor’s switching threshold.
+section: What I did
+- Designed a 3D printed fixture that positions calibrated magnets at precise Gauss levels
+- Paired the Hall-effect sensor with actuators that give position, velocity, and acceleration feedback
+- Worked in the PCB lab and co-designed parts that aid PCB manufacturing
+
+[project]
+title: Canoe Cart (Yak Thang)
+main: yes
+type: Work
+summary: A rivet-assembled sheet metal cart that carries up to 160 lbs of kayak or canoe.
+org: Design Launchers, LLC
+tools: SolidWorks sheet metal, flat patterns
+role: Product Development Engineer Associate
+period: 2025
+images: canoe-cart-1.jpg, canoe-cart-2.jpg
+illustrative: yes
+note: Paid client project through Design Launchers, LLC. Due to NDA restrictions, images and proprietary design details have been omitted.
+overview: A sheet metal canoe transport cart designed to carry a loaded kayak or canoe from vehicle to water, supporting up to 160 lbs across two large pneumatic drive wheels and two smaller stabilizing wheels. The hull rests on a rail cradle system secured with straps. The project was more technically constrained than the product category suggests; the entire structure is sheet metal, meaning every structural and geometric decision had to work within the limits of what can be bent, cut, and riveted from flat stock. End-user self-assembly was a hard requirement, which ruled out welding as a joining method and made rivet joint design and part alignment critical.
+section: Bend radius and wall thickness management
+- Balancing sheet thickness against required bend radii was the primary structural constraint throughout; thicker stock for load capacity, tighter radii for geometry, and the two work against each other
+- Every bend feature was evaluated against minimum bend radius limits for the selected gauge to prevent cracking at the outer fiber
+section: Corner and intersection workarounds
+- Sheet metal corners at intersecting bend lines create material interference that cannot be resolved by bending alone
+- Addressed through relief cuts and slit-notched corners that relieve the material before bending
+- These features had to be sized correctly: too small and the bend still tears; too large and the corner loses structural integrity
+- The workarounds were designed into the flat pattern from the start, not added as fixes after the geometry was set
+section: Riveted construction for customer assembly
+- First iteration used welding; redesigned to riveted construction to eliminate the need for specialized tools during customer assembly
+- Rivet joint placement was driven by load path; joints at high-stress locations were sized and spaced for shear capacity, not just assembly convenience
+- Part count minimized through geometry mirroring: two parts serve double duty on opposite sides of the assembly, reducing unique component count and simplifying the assembly sequence
+section: Rail cradle system
+- Designed the hull support rail geometry to accommodate canoe and kayak hull profiles without requiring hull-specific customization
+- Strap attachment points integrated directly into the rail bends; no separate hardware required
+outcome: Currently in manufacturing. Designed for self-assembly by the end user with no specialized tools. Full sheet metal flat pattern and production drawing package complete through Design Launchers, LLC.
+
+[project]
+title: Arduino Desk Pet
+main: yes
+type: Personal
+summary: A desk pet with animated mood states and EEPROM persistence, improved through hardware testing.
+org: Personal project
+tools: Arduino, C++, EEPROM
+role: Personal project
+overview: A desk pet built on an Arduino, with animated mood states. I improved it through repeated rounds of hardware testing.
+section: What I did
+- Programmed animated mood states
+- Used EEPROM for persistence
+- Iterated on the design through hardware testing
+
+[project]
+title: Omega Propulsion Bracket System
+type: Work
+summary: Took ownership of the full bracket system for the propulsion tubes on a new satellite, from requirements to release.
+org: Astranis Space Technologies
+tools: SolidWorks, Ansys FEA, Arena PLM
+role: Mechanical Engineering Intern
+period: Aug 2026 to Present
+overview: I was tasked with creating the schematic and CAD for the propulsion system on Astranis’s new satellite, Omega. While working on it, I noticed that many of the brackets that fasten the propulsion tubes had not been designed or validated. I reached out to the team leads and took ownership of the entire mechanical development effort for the bracket system, and they approved.
+section: What I did
+- Own the requirements, design, FEA, drawings, and release for the bracket system
+- Designing the bracket system from the ground up and carrying it through manufacturing
+- Designed, quoted, and ordered CNC machined propulsion brackets
+- Work most days across CAD, FEA, and team meetings with almost every team in the vehicle engineering department
+
+[project]
+title: GNOR Autonomous Marine Vessel
+type: Team project
+summary: Team lead and software engineer on a top 5 vessel with IMU-based heading control.
+org: Student team of 4
+tools: C++, Arduino, IMU, laser cutting
+role: Team Lead & Software Engineer, 4-Person Team
+period: 2024
+images: gnor-1.jpg, gnor-2.jpg, gnor-3.jpg
+overview: The Great Navel Orange Race (GNOR) is a competitive autonomous vessel challenge requiring teams to design, build, and deploy a fully self-navigating marine craft through an aquatic obstacle course. I served as de facto team lead; assigning roles, coordinating the build timeline, and owning the full software stack; while also contributing to mechanical design and hull construction. The vessel featured a smooth-finished wood hull, brushless DC propulsion, servo-actuated steering, and a closed-loop IMU-based heading control system coded entirely by me. The team finished top 5 in the class.
+section: Closed-loop heading control system
+- Wrote all control code in C++ on Arduino; implemented a closed-loop heading controller using an IMU as the feedback sensor
+- Applied real-time gyroscopic filtering to reject sensor noise and transient disturbances during autonomous course corrections
+- Integrated obstacle avoidance logic into the heading controller so the vessel could respond to course geometry without manual input
+- Tuned motor response and steering gain through repeated on-water testing, iterating gains until the vessel tracked headings with the precision needed for the competition course
+section: Propulsion and steering system
+- Synchronized dual brushless DC motors for forward propulsion and differential thrust; coordinated with the servo-actuated steering system for combined heading authority
+- Characterized motor response at different throttle settings to inform control gain selection and feed-forward tuning
+section: Hull construction and structural design
+- Constructed the hull using laser-cut acrylic panels; applied smooth surface finishing to minimize drag across varying water conditions
+- Calculated the center of gravity of the full assembly; including electronics, battery, and propulsion; and adjusted component placement to ensure the vessel remained balanced under load
+- Designed the electronics bay for quick-swap access, allowing battery and module replacement between test runs without disassembly of the hull
+section: Team coordination
+- Assigned roles across the 4-person team, set build milestones, and managed integration between mechanical and electrical subsystems throughout the project
+outcome: Competed and finished top 5 in the class. The vessel completed the autonomous navigation course with stable heading control and reliable obstacle avoidance; validated entirely through on-water testing.
+
+[project]
+title: Waveguide Support Brackets
+type: Work
+summary: Brackets and a universal support plate that hold satellite waveguides in place through launch.
+org: Astranis Space Technologies
+tools: SolidWorks, Ansys FEA, CNC machining
+role: Mechanical Engineering Intern
+period: Aug 2026 to Present
+overview: Satellite waveguides need to stay secure through launch. I own the support brackets across two satellite configurations, and I noticed that five waveguide configurations each used a different support plate, so I am designing a universal plate with CNC machined brackets.
+section: What I did
+- Own 50+ waveguide support brackets across 2 satellite configurations
+- Design and analyze aluminum and PEEK brackets in Ansys FEA, which also shows where supports are needed
+- Designing a universal support plate to replace five separate plates
+- Designed, quoted, and ordered CNC machined waveguide feed brackets
+- Install brackets and other hardware onto the spacecraft
+- Present design rationale and analysis results in Critical Design Reviews
+
+[project]
+title: Modular Cam-Locking Harness
+type: Work
+summary: Shear analysis and a spring-loaded gear that lets a harness adjust with one hand.
+org: Design Launchers, LLC
+tools: SolidWorks, shear analysis, injection molding DFM
+role: Lead Product Development Engineer Associate
+period: 2026 to Present
+images: harness-1.jpg, harness-2.jpg
+illustrative: yes
+note: Paid client project through Design Launchers, LLC. Due to NDA restrictions, images and proprietary design details have been omitted.
+overview: A wearable umbrella-mounting system integrated into load-bearing textile harnesses. The core engineering challenge was packaging real consumer adjustability into injection-molded components; some under half an inch; while ensuring the cam-locking interface could handle the moment load generated by an extended umbrella without skipping or failing. The second design phase is focused on eliminating fasteners entirely in favor of a spring-loaded gear mechanism, driven by a complete assembly redesign led by me.
+section: Structural analysis at the cam interface
+- Performed shear analysis at the cam locking interface to identify the failure mode: insufficient tooth shear area causing the cam to skip under umbrella moment load
+- Adjusted cam geometry to increase shear area and prevent skip without increasing the component envelope; solution driven by calculated results, not trial-and-error
+section: Spring-loaded gear redesign; second design phase
+- Led the complete redesign of the adjustment mechanism after both the client and team agreed that minimizing screws was the priority for user experience
+- Conceived and designed a spring-loaded gear system: compressing the spring disengages the gear teeth, allowing the cam position and plate angle to be repositioned freely; releasing returns the spring to lock the new position
+- The mechanism delivers a fast, deliberate, tactilely satisfying action; one hand, no tools, no loose hardware
+section: Adjustability and fit system
+- Multiple independent adjustment points to accommodate a full range of body proportions; sew-on integration features built directly into molded parts; no separate attachment hardware required for textile integration
+section: Injection molding DFM at sub-inch scale
+- All features designed for injection molding with draft, parting lines, consistent wall thickness, and undercut relief at component scales where DFM errors have no geometric margin to absorb
+outcome: Currently in its second design phase. Spring-loaded gear mechanism designed and under internal review. All components ready for tooling at the current revision.
+
+[project]
+title: Tongue Elevator: Pediatric Medical Device
+type: Work
+summary: A medical-grade tongue positioning device for use by a physician during oral procedures on pediatric patients. Geometry driven entirely by anatomical conformance requirements; extensive use of lofts and swept cuts to achieve the organic surface profile the customer specified, with all edges fully radiused to eliminate any sharp features inside the mouth.
+org: Design Launchers, LLC
+
+[project]
+title: Hand Surgery Medical Device
+type: Work
+summary: A laser-cut and bent aluminum device that allows surgeons to independently position and hold each finger during hand surgery. A comb-based adjustment mechanism allows each finger to be locked to a discrete angle independently.
+org: Design Launchers, LLC
+
+[project]
+title: Handheld Motorized Gear System
+type: Work
+summary: Drivetrain, power, and PCB work to move a consumer device from prototype toward production.
+org: Design Launchers, LLC
+tools: SolidWorks, motor selection, soldering, drill press
+role: Lead Product Development Engineer Associate
+period: 2025 to Present
+images: handheld-gear-1.jpg, handheld-gear-2.jpg
+illustrative: yes
+note: Paid client project through Design Launchers, LLC. Due to NDA restrictions, images and proprietary design details have been omitted.
+overview: An electrically driven consumer device taken from concept through multiple production-iteration cycles at Design Launchers, LLC. The project has spanned the full development lifecycle; power system architecture, motor selection, drivetrain design, hands-on prototyping, international vendor coordination, and ongoing cross-disciplinary collaboration with an electrical engineering firm on a custom PCB. Current work is focused on upgrading critical drivetrain components and finalizing production electronics.
+section: Power system and motor selection
+- Designed the power architecture around a battery, charge controller, and voltage regulator; evaluated multiple motor candidates and validated the final selection against bristle load requirements
+- Performed soldering and circuit assembly across all prototype phases
+section: Drivetrain redesign; gear slippage and shaft upgrade
+- Root-caused gear slippage to shaft tilting under load, causing the gear interface to lose engagement; converted the main dowel pin to a D-shaft profile using a manual drill press and revised the fastening strategy; eliminated slippage completely
+- Leading current upgrade from plastic to metal gears; coordinated with international vendors to source and qualify production-grade gear sets to the required tooth geometry and material spec
+- Redesigned the shaft as a turned part and introduced bushings at key interfaces to reduce friction and extend service life; a significant improvement over the press-fit plastic prototype approach
+section: Custom PCB development; interdisciplinary collaboration
+- Working directly with an external electrical engineering firm to design the production PCB, translating mechanical and user-experience requirements into electrical specifications
+- Requirements include power button, LED battery indicator, and full motor control integration; coordinating between mechanical packaging constraints and PCB layout throughout
+section: Mechanical packaging and fabrication
+- Managed a tight internal envelope with gearing, electronics, and structural features competing for the same volume
+- Installed Helicoil inserts by hand tapping to reinforce threaded interfaces through repeated prototype assembly cycles
+- Parametrically modeled the bristle guard in multiple configurations to give users control over applied force
+outcome: Metal gear upgrade and turned shaft in active development with international vendors. Custom PCB in progress with EE firm. Product currently transitioning from late prototyping into production specification.
+
+[project]
+title: CO₂-Powered Cosmetic Sprayer
+type: Work
+summary: A handheld cosmetic sprayer powered by a CO₂ cartridge, developed through three to four design generations over several months of iterative prototyping. The core engineering challenges were CO₂ cartridge integration and designing a puncture mechanism with reliable, consistent actuation.
+org: Design Launchers, LLC
+
+[project]
+title: Multi-Function Compound Applicator
+type: Work
+summary: Three tools in one handheld applicator with modular nozzles and reloadable cartridges.
+org: Design Launchers, LLC
+tools: SolidWorks, injection molding DFM, prototyping
+role: Lead Product Development Engineer Associate
+period: 2025 to Present
+images: applicator-1.jpg, applicator-2.jpg
+illustrative: yes
+note: Paid client project through Design Launchers, LLC. Due to NDA restrictions, images and proprietary design details have been omitted.
+overview: A multi-function compound applicator designed and prototyped for professional use across a range of material viscosities, from thin compounds to heavier materials like spackle. The tool integrates three distinct functions in a single handheld form factor with a modular nozzle system and reloadable cartridge architecture. The second design phase delivered a significantly slimmer and shorter profile while maintaining the same cartridge volume, and added new functional features based on field feedback.
+section: Multi-function integration
+- Designed three distinct operational modes into one device without compromising ergonomics or manufacturability
+- Modular nozzle system with four outlet geometries; rectangular, triangular, oval, and circular; each matched to a specific surface condition or application type
+section: Second design phase; form factor and feature improvements
+- Redesigned the profile to be significantly slimmer and shorter while preserving the same internal cartridge volume
+- A packaging challenge that required rethinking the cartridge geometry and internal component layout
+- Added an integrated reaming feature for clearing clogged nozzle openings in the field without disassembly
+- Designed an integrated cap storage feature so the cap cannot be set down and lost during use; a common field complaint addressed directly in geometry
+section: Field-efficiency and DFM
+- Reloadable cartridges for fast field reloading without device disassembly
+- All components designed with full DFM compliance from the first modeled feature; manufacturing-ready without geometry changes for tooling
+outcome: Currently in its second prototyping phase. Profile and feature improvements validated in the current iteration through Design Launchers, LLC.
+
+[project]
+title: Linear-to-Compound Motion Mechanism
+type: Work
+summary: One linear input drives two motions across the full stroke in a magnet-integrated assembly.
+org: Design Launchers, LLC
+tools: SolidWorks, tolerancing, injection molding DFM
+role: Lead Product Development Engineer Associate
+period: 2025 to Present
+images: mechanism-1.jpg, mechanism-2.jpg
+illustrative: yes
+note: Paid client project through Design Launchers, LLC. Due to NDA restrictions, images and proprietary design details have been omitted.
+overview: A consumer device that converts a single linear input into a compound output simultaneously driving two distinct motions. The core engineering challenge was maintaining consistent mechanical performance across the full stroke range while designing around opposing draft angles in a dense, magnet-integrated assembly. Injection molding DFM constraints were applied from the first modeled feature; not retrofitted.
+section: Motion conversion mechanism
+- Designed the mechanism to convert a single linear input into coordinated compound output with consistent force and displacement across the full stroke
+- Tight tolerancing of the sliding interfaces was the primary design constraint; any stack-up caused output inconsistency at end of stroke
+section: DFM-first modeling approach
+- Every component modeled with draft angles, parting line placement, wall thickness targets, and undercut relief from the initial sketch; no geometry reworked for tooling
+- Opposing draft angle requirements on interfacing components resolved through parting line placement strategy rather than added complexity
+- Magnet integration within the dense assembly required careful pocket geometry and pull-direction coordination with draft requirements
+outcome: Currently in active prototyping through Design Launchers, LLC.
+
+[project]
+title: Wall-Mounted Modular Organizer
+type: Work
+summary: A large closet organizer that collapses flat with retractable gussets and few screws.
+org: Design Launchers, LLC
+tools: SolidWorks, injection molding, extrusion
+role: Product Development Engineer Associate
+period: 2026 to Present
+images: organizer-1.jpg, organizer-2.jpg
+illustrative: yes
+note: Paid client project through Design Launchers, LLC. Due to NDA restrictions, images and proprietary design details have been omitted.
+overview: A wall-mounted closet shoe organizer designed to slide shoes forward for easy access. The defining engineering challenge of this project was portability: a product this large has to disassemble down to a size the customer can transport and store, which drove retractable gussets, a screw-minimized assembly strategy, and a deliberate part reuse approach throughout. Competitive analysis of existing products informed the structural baseline, and all components are designed for injection molding.
+section: Portability-driven design; retractable gussets
+- The primary engineering constraint was making a structurally sound large-format assembly that could also collapse and pack flat for transport and storage
+- Designed retractable gussets that provide structural rigidity in the deployed state and fold away cleanly during disassembly; no tools required
+- Minimized screw count throughout the assembly to reduce disassembly time and improve the customer experience; most interfaces use snap or interference features instead
+section: Cost reduction through standard extrusion sizing
+- Specified structural extrusion members to common market dimensions, avoiding custom extrusion tooling and reducing procurement cost and lead time
+- Extrusion selection was constrained to sizes with broad supplier availability to protect the supply chain
+section: Part reuse and mold count minimization
+- Designed components to serve mirrored roles on opposite sides of the assembly, reducing the number of unique molds and extrusion lengths required
+- Several parts are shared across both configuration variants, keeping the total mold investment down as the product line scales
+section: Competitive analysis and structural improvement
+- Identified the single-arm configuration used by market-leading products as the primary structural weakness; designed a two-arm configuration as the fix, significantly increasing lateral load stability
+outcome: Currently in active prototyping phase through Design Launchers, LLC.
+
+[project]
+title: Eyelet Positioner: Fishing Line Threading Tool
+type: Work
+summary: A compact fishing line threading tool built around a chemically etched metal insert that is subsequently overmolded in plastic. Chemical etching creates surface geometry at tolerances around 20 thousandths of an inch, which the overmold locks onto mechanically; a process that demands precise sequencing between the etching and molding stages to ensure adhesion and dimensional accuracy.
+org: Design Launchers, LLC
+
+[project]
+title: Whiskey Glasses: World Cup & Super Bowl Editions
+type: Work
+summary: A geometry-driven modeling project focused on translating complex surface patterns into manufacturable glass molds. Each design; a soccer ball, golf ball, and human skull; required precise replication of its defining geometry, from the truncated icosahedron panel layout of the soccer ball to the freeform surface topology of the skull.
+org: Design Launchers, LLC
+
+[project]
+title: Colander: Two-Configuration Design
+type: Work
+summary: Designed two configurations varying in handle count and overall size. The project began with drainage performance as the primary objective, then shifted to balance functionality with consumer aesthetic requirements, which drove a redesign of the hole pattern geometry.
+org: Design Launchers, LLC
+
+[project]
+title: PCB Enclosures (DEV and Flight)
+type: Work
+summary: Designed enclosures for thermal performance, with extra surface geometry and vent holes for heat dissipation, heat pack cable management, and standardized flight-approved screw bosses.
+org: Astranis Space Technologies
+tools: Mechanical design
+
+[project]
+title: SolidWorks Fillet Macros
+type: Work
+summary: Wrote and released company-wide macros that auto-fillet large parts, standardize fillet sizing, and flag broken fillet features, which cuts diagnosis time and CNC operations.
+org: Astranis Space Technologies
+tools: Python, SolidWorks API
