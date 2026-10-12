@@ -19,12 +19,12 @@
 
 [site]
 name: Gabriel Mareze
-eyebrow: Mechanical Engineer
+eyebrow: Mechanical engineer
 headline: From sketch | to production.
 intro: I design hardware from first sketch to manufacturable part, from satellite brackets to consumer products.
 discipline: Mechanical Engineering
 based: San Francisco, CA
-status: Mechanical Engineering Intern, Astranis
+status: Engineering Intern, Astranis
 education: UCF, B.S. ME, Dec 2027
 tools: SolidWorks, Ansys, MATLAB, Python
 sheet: 01 of 01, Rev C, Oct 2026
@@ -204,7 +204,6 @@ main: yes
 type: Personal
 summary: A desk pet with animated mood states and EEPROM persistence, improved through hardware testing.
 org: Personal project
-images: ArduinoPet_3.jpg
 tools: Arduino, C++, EEPROM
 role: Personal project
 overview: A desk pet built on an Arduino, with animated mood states. I improved it through repeated rounds of hardware testing.
@@ -445,3 +444,22 @@ type: Work
 summary: Wrote and released company-wide macros that auto-fillet large parts, standardize fillet sizing, and flag broken fillet features, which cuts diagnosis time and CNC operations.
 org: Astranis Space Technologies
 tools: Python, SolidWorks API
+
+[about]
+title: About me
+quote: I have wanted to be part of something bigger since I was a kid.
+interests: Hiking | Soccer | Tinkering
+para: I am a mechanical engineering student at UCF who likes building things and figuring out how they work. Since I was a kid, I have wanted to be part of something bigger than myself. The photos below are from when I was younger.
+para: Outside of school and work, I hike and play soccer. I also tinker: taking things apart, building small projects, and testing ideas by hand. It shows up in personal projects like the Automated Card Dealer and the Arduino Desk Pet.
+para: Today I design flight hardware at Astranis. I am looking for internships in aerospace, robotics, and advanced hardware where I can contribute to work that matters.
+gallery: When I was younger
+photo: space-1.jpg
+photo: space-2.jpg
+photo: space-3.jpg
+photo: soccer-1.jpg
+gallery: On the trail
+photo: hiking-1.jpg
+photo: hiking-2.jpg
+# To add a caption, put it after a | symbol, for example:
+# photo: space-1.jpg | My caption here
+# To add another photo group, add a new "gallery: Title" line followed by its photo lines.
