@@ -69,7 +69,7 @@ dl{margin:0;font-size:12px;display:grid;grid-template-columns:44px 1fr;gap:3px 8
 .job .w{color:var(--soft);font-size:15px}.job h3{font-size:28px}.job .o{color:var(--acc);margin:2px 0 10px;font-weight:500}
 ul.t{margin:0;padding-left:18px}ul.t li{margin:5px 0;max-width:70ch}
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}.skills div{border:1px solid var(--line);padding:16px}.skills h3{font-size:22px;margin-bottom:6px}.skills p{margin:0;font-size:15px;color:var(--soft)}
-.contact{font-size:24px}.contact a{display:inline-block;margin:0 26px 8px 0}
+.contact{font-size:24px;overflow-wrap:anywhere}.contact a{display:inline-block;margin:0 26px 8px 0}
 footer.site{padding:26px 0 40px;border-top:1px solid var(--line);font-size:14px;color:var(--soft)}
 .view{display:none}.view.on{display:block;animation:wipe .7s cubic-bezier(.2,.8,.2,1)}
 @keyframes wipe{from{clip-path:inset(0 0 100% 0);opacity:.4}to{clip-path:inset(0);opacity:1}}
@@ -85,15 +85,15 @@ footer.site{padding:26px 0 40px;border-top:1px solid var(--line);font-size:14px;
 .rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}.rv.in{opacity:1;transform:none}
 .gal figure.rv{clip-path:inset(0 100% 0 0);transition:clip-path .9s cubic-bezier(.2,.8,.2,1),opacity .4s;transition-delay:var(--d,0s)}.gal figure.rv.in{clip-path:inset(0)}
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.hero .wrap{grid-template-columns:1fr}}
-@media(max-width:620px){.tb4.four,.tb4.three{grid-template-columns:1fr 1fr}.tb4 div{border-bottom:1px solid var(--line)}.hero h1{font-size:52px}.grid{grid-template-columns:1fr}.job{grid-template-columns:1fr;gap:6px}nav strong{display:none}nav ul{gap:14px}.tb{grid-template-columns:1fr}.tb div{border-right:0;border-bottom:1px solid var(--line)}}
+@media(max-width:620px){.contact{font-size:19px}.tb4.four,.tb4.three{grid-template-columns:1fr 1fr}.tb4 div{border-bottom:1px solid var(--line)}.hero h1{font-size:52px}.grid{grid-template-columns:1fr}.job{grid-template-columns:1fr;gap:6px}nav strong{display:none}nav .wrap{padding:0 14px}nav ul{gap:14px;min-width:0;overflow-x:auto;scrollbar-width:none}nav a{font-size:14px;white-space:nowrap}.tb{grid-template-columns:1fr}.tb div{border-right:0;border-bottom:1px solid var(--line)}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.ln i{transform:none}.dim{width:100%}.lead,.cta,.rv{opacity:1;transform:none}.gal figure.rv{clip-path:none}.draw path,.draw rect,.draw circle{stroke-dashoffset:0}html{scroll-behavior:auto}}
 
-.err{padding:24px;background:#fff;color:#082c70;margin:0;font:16px/1.5 sans-serif}
+.proj p.quote{font:600 clamp(30px,5vw,48px)/1.08 "Barlow Condensed",sans-serif;max-width:24ch;margin:14px 0 22px}.tags{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 28px}.tags span{border:1px solid var(--line);padding:4px 14px;font:13px "IBM Plex Mono",monospace;color:var(--acc)}.gal figcaption{background:var(--deep);color:var(--soft);font:12px "IBM Plex Mono",monospace;padding:8px 12px}.gal figure{display:flex;flex-direction:column}.gal figure img{flex:1;min-height:0}.gal.tall{grid-template-columns:repeat(var(--c,2),1fr)}.gal.tall figure img{aspect-ratio:3/4;max-height:none;height:auto;object-fit:cover;object-position:50% 30%}@media(max-width:620px){.gal.tall{grid-template-columns:1fr 1fr}}.err{padding:24px;background:#fff;color:#082c70;margin:0;font:16px/1.5 sans-serif}
 </style>
 </head>
 <body>
 <div id="bar"></div>
-<nav><div class="wrap"><strong id="brand"></strong><ul><li><a href="#projects">Projects</a></li><li><a href="#/all">All projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+<nav><div class="wrap"><strong id="brand"></strong><ul><li><a href="#projects">Projects</a></li><li><a href="#/all">All projects</a></li><li id="navabout"><a href="#/about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
 
 <main id="home" class="view on">
 <header class="hero"><div class="wrap">
@@ -102,7 +102,7 @@ footer.site{padding:26px 0 40px;border-top:1px solid var(--line);font-size:14px;
 <h1 id="h1"></h1>
 <div class="dim"><span>SCALE 1:1 &nbsp; TOL +/-0.005</span></div>
 <p class="lead" id="lead"></p>
-<div class="cta"><a class="btn solid" href="#projects">View projects</a><a class="btn" id="mailbtn" href="#">Email me</a></div>
+<div class="cta"><a class="btn solid" href="#projects">View projects</a><a class="btn" id="aboutbtn" href="#/about">About me</a><a class="btn" id="mailbtn" href="#">Email me</a></div>
 </div>
 <div><div class="drawing"><svg class="draw" viewBox="0 0 520 330" fill="none" stroke="#f5f9ff" stroke-width="1.6" role="img" aria-label="Dimensioned drawing of a mounting bracket">
 <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#f5f9ff" stroke="none" style="stroke-dasharray:none;stroke-dashoffset:0"/></marker></defs>
@@ -146,18 +146,18 @@ const $=s=>document.querySelector(s);
 const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const slug=t=>t.toLowerCase().replace(/&/g,' and ').normalize('NFKD').replace(/[^\w\s-]/g,'').trim().replace(/[\s_]+/g,'-').replace(/-+/g,'-');
 const yes=v=>/^(yes|true|y)$/i.test(v||'');
-function parse(t){const o={site:{},stats:[],skills:[],jobs:[],projects:[]};let type=null,cur=null,key=null,sec=null;
+function parse(t){const o={site:{},stats:[],skills:[],jobs:[],projects:[],about:null};let type=null,cur=null,key=null,sec=null;
 for(const raw of t.split(/\r?\n/)){const line=raw.trim();
  if(!line){key=null;continue}
  if(raw[0]==='#')continue;
  let m=line.match(/^\[(\w+)\]$/);
  if(m&&raw[0]==='['){type=m[1].toLowerCase();key=null;sec=null;
-  if(type==='site')cur=o.site;else if(type==='job'){cur={items:[]};o.jobs.push(cur)}else if(type==='project'){cur={sections:[]};o.projects.push(cur)}else cur=null;continue}
+  if(type==='site')cur=o.site;else if(type==='job'){cur={items:[]};o.jobs.push(cur)}else if(type==='project'){cur={sections:[]};o.projects.push(cur)}else if(type==='about'){cur=o.about={paras:[],galleries:[]}}else cur=null;continue}
  if(type==='stats'||type==='skills'){const a=line.split('|');(type==='stats'?o.stats:o.skills).push([a[0].trim(),a.slice(1).join('|').trim()]);continue}
  if(!cur)continue;
  if(line.startsWith('- ')){const v=line.slice(2).trim();if(type==='project'){if(!sec){sec={h:'',items:[]};cur.sections.push(sec)}sec.items.push(v)}else cur.items.push(v);key='*b';continue}
  m=line.match(/^([a-z_]+):\s*(.*)$/);
- if(m&&raw[0]!==' '&&raw[0]!=='\t'){key=m[1];if(key==='section'&&type==='project'){sec={h:m[2],items:[]};cur.sections.push(sec);key=null}else cur[key]=m[2];continue}
+ if(m&&raw[0]!==' '&&raw[0]!=='\t'){key=m[1];if(type==='about'&&key==='para'){cur.paras.push(m[2]);key=null;continue}if(type==='about'&&key==='gallery'){cur.galleries.push({t:m[2],photos:[]});key=null;continue}if(type==='about'&&key==='photo'){let g=cur.galleries[cur.galleries.length-1];if(!g){g={t:cur.photos_title||'Photos',photos:[]};cur.galleries.push(g)}const a=m[2].split('|');g.photos.push({f:a[0].trim(),c:a.slice(1).join('|').trim()});key=null;continue}if(key==='section'&&type==='project'){sec={h:m[2],items:[]};cur.sections.push(sec);key=null}else cur[key]=m[2];continue}
  if(key==='*b'){const a=type==='project'?sec.items:cur.items;a[a.length-1]+=' '+line;continue}
  if(key)cur[key]+=' '+line}
 return o}
@@ -180,7 +180,13 @@ function init(){const s=S.site;
  const ln=(s.linkedin||'').replace(/^(?!https?:)/,'https://');
  $('#contactp').innerHTML=`${esc(s.contact_line)}<br><a href="mailto:${esc(s.email)}">${esc(s.email)}</a>${s.linkedin?`<a href="${esc(ln)}">LinkedIn</a>`:''}`;
  $('#foot').textContent=s.footer||'';
+ if(!S.about){$('#navabout').style.display='none';$('#aboutbtn').style.display='none'}
  watch($('#home'));route()}
+const about=()=>{const a=S.about;return `<a class="back" href="#projects">Back to home</a><div class="sh2"><span>About</span><span>${esc(S.site.name)}</span></div><h1 class="pt">${esc(a.title||'About me')}</h1>
+${a.quote?`<p class="quote">${esc(a.quote)}</p>`:''}${a.interests?`<div class="tags">${a.interests.split('|').map(x=>`<span>${esc(x.trim())}</span>`).join('')}</div>`:''}
+${a.paras.map(x=>`<p class="rv">${esc(x)}</p>`).join('')}
+${a.galleries.filter(g=>g.photos.length).map(g=>`<h2>${esc(g.t)}</h2><div class="gal tall" style="--c:${g.photos.length<=3?g.photos.length:2}">${g.photos.map(p=>`<figure class="rv"><img src="images/${esc(p.f)}" alt="${esc(p.c||g.t)}">${p.c?`<figcaption>${esc(p.c)}</figcaption>`:''}</figure>`).join('')}</div>`).join('')}
+<div class="pn"><a href="#/all">See all projects</a><a href="#contact">Get in touch</a></div>`};
 const all=()=>`<a class="back" href="#projects">Back to home</a><h1 class="pt">All projects</h1><p class="role">Ordered by what I find most interesting. Entries with a button have their own page.</p><div class="grid" style="margin-top:28px">${PRJ.map((p,i)=>card(p,`Sheet ${i+1} of ${PRJ.length}`)).join('')}</div>`;
 function page(p){const i=PG.indexOf(p),a=PG[(i+PG.length-1)%PG.length],b=PG[(i+1)%PG.length];
 const sh=p.main?`Sheet ${HOME.indexOf(p)+1} of ${HOME.length}`:`Sheet ${PRJ.indexOf(p)+1} of ${PRJ.length}`;
@@ -197,6 +203,7 @@ function watch(root){root.querySelectorAll('.rv').forEach((el,i)=>{el.style.setP
 function count(n){const t=+n.dataset.n,s=n.dataset.s||'',t0=performance.now();(function f(now){const k=Math.min(1,(now-t0)/1400);n.textContent=Math.round(t*(1-Math.pow(1-k,3)))+(k==1?s:'');if(k<1)requestAnimationFrame(f)})(t0)}
 function show(id){document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));const v=$('#'+id);void v.offsetWidth;v.classList.add('on')}
 function route(){const h=location.hash,m=h.match(/^#\/project\/([\w-]+)/);
+if(h==='#/about'&&S.about){$('#pbody').className='proj';$('#pbody').innerHTML=about();show('project');scrollTo(0,0);watch($('#pbody'));return}
 if(h==='#/all'){$('#pbody').className='proj wide';$('#pbody').innerHTML=all();show('project');scrollTo(0,0);watch($('#pbody'));return}
 if(m){const p=PG.find(x=>x.slug==m[1]);if(p){$('#pbody').className='proj';$('#pbody').innerHTML=page(p);show('project');scrollTo(0,0);watch($('#pbody'));return}}
 if(!$('#home').classList.contains('on'))show('home');const el=h.length>1&&!h.startsWith('#/')?document.getElementById(h.slice(1)):null;
