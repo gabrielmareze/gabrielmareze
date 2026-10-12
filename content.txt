@@ -19,12 +19,12 @@
 
 [site]
 name: Gabriel Mareze
-eyebrow: Mechanical engineer
+eyebrow: Mechanical Engineer
 headline: From sketch | to production.
 intro: I design hardware from first sketch to manufacturable part, from satellite brackets to consumer products.
 discipline: Mechanical Engineering
 based: San Francisco, CA
-status: Engineering Intern, Astranis
+status: Mechanical Engineering Intern, Astranis
 education: UCF, B.S. ME, Dec 2027
 tools: SolidWorks, Ansys, MATLAB, Python
 sheet: 01 of 01, Rev C, Oct 2026
@@ -204,6 +204,7 @@ main: yes
 type: Personal
 summary: A desk pet with animated mood states and EEPROM persistence, improved through hardware testing.
 org: Personal project
+images: ArduinoPet_3.jpeg
 tools: Arduino, C++, EEPROM
 role: Personal project
 overview: A desk pet built on an Arduino, with animated mood states. I improved it through repeated rounds of hardware testing.
