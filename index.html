@@ -4,128 +4,151 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-
-:root{--bg:#0c3b92;--deep:#082c70;--ink:#f5f9ff;--soft:#bcd3f5;--line:rgba(245,249,255,.85);--g1:rgba(245,249,255,.07);--g2:rgba(245,249,255,.16);--acc:#9fd0ff;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a3380;--deep:#06235a}}
-:root[data-theme="dark"]{--bg:#0a3380;--deep:#06235a}
-html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<style>:root{--bg:#fff;--paper:#fff;--deep:#2D3F50;--ink:#2D3F50;--soft:#5d6c7b;--line:rgba(46,63,82,.18);--line2:rgba(46,63,82,.5);--acc:#0177BF;--or:#FEA500;--sl:#2D3F50;--gr:#A9A9A9;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
 *,*::before,*::after{box-sizing:inherit}
-body{margin:0;background-color:var(--bg);color:var(--ink);font:400 17px/1.6 Barlow,system-ui,sans-serif;background-image:linear-gradient(var(--g2) 1px,transparent 1px),linear-gradient(90deg,var(--g2) 1px,transparent 1px),linear-gradient(var(--g1) 1px,transparent 1px),linear-gradient(90deg,var(--g1) 1px,transparent 1px);background-size:120px 120px,120px 120px,24px 24px,24px 24px}
+body{margin:0;background-color:var(--bg);color:var(--ink);font:400 17px/1.65 Barlow,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:600;line-height:1.05;margin:0}
 a{color:var(--ink)}:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
-.mono,.sh,.sh2,dt,.tb4 div,.tb div,.cap,.note{font-family:"IBM Plex Mono",ui-monospace,monospace}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
 #bar{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--acc);transform:scaleX(0);transform-origin:left;z-index:9}
-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--deep);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
-nav strong{font:700 22px "Barlow Condensed",sans-serif;letter-spacing:.04em;text-decoration:none}
-nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
-nav a{text-decoration:none;font-size:15px;color:var(--soft);position:relative}
-nav ul a::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .3s}
-nav ul a:hover{color:var(--ink)}nav ul a:hover::after{transform:scaleX(1)}
-.hero{padding:64px 0 40px}.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-.eyebrow{font:500 13px "IBM Plex Mono",monospace;color:var(--acc);margin-bottom:14px}
-.hero h1{font-size:clamp(52px,8.5vw,108px);font-weight:700}
-.ln{display:block;overflow:hidden;padding-bottom:.08em}.ln i{display:block;font-style:normal;transform:translateY(105%);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
-.ln:nth-child(2) i{animation-delay:.15s}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:rgba(255,255,255,.95);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+nav strong{font:700 21px "Barlow Condensed",sans-serif;letter-spacing:.08em}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;align-items:center}
+nav a{text-decoration:none;font-size:15px;color:var(--soft);transition:color .2s}nav ul a:hover{color:var(--ink)}
+nav a.navcta{border:1px solid var(--line2);padding:7px 16px;color:var(--ink)}nav a.navcta:hover{background:var(--ink);color:var(--deep)}
+.hero{padding:56px 0 8px}.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.hero .wrap.facts{display:block;margin-top:56px}
+.eyebrow{font:500 15px Barlow,sans-serif;color:var(--acc);margin-bottom:16px}.eyebrow:empty{display:none}
+.hero h1{font-size:clamp(38px,4.6vw,54px);font-weight:700;line-height:1.05}
+.ln{display:block;overflow:hidden;padding-bottom:.08em}.ln i{display:block;font-style:normal;transform:translateY(105%);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}.ln:nth-child(2) i{animation-delay:.15s}
 @keyframes up{to{transform:none}}
-.dim{position:relative;height:18px;margin:18px 0;display:flex;align-items:center;font:12px "IBM Plex Mono",monospace;color:var(--soft);width:0;animation:grow 1.2s .6s ease-out forwards;white-space:nowrap;overflow:hidden}
-.dim::before{content:"";flex:1;border-top:1px solid var(--soft);margin-right:10px}.dim span{flex:none}
+.dim{height:14px;margin:28px 0;max-width:420px;width:0;position:relative;border-left:1px solid var(--soft);border-right:1px solid var(--soft);animation:grow 1.2s .6s ease-out forwards}
+.dim::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px solid var(--soft)}
 @keyframes grow{to{width:100%}}
-.lead{font-size:21px;max-width:34ch;color:var(--soft);margin:0 0 26px;opacity:0;animation:fade .8s .9s forwards}
-.cta{opacity:0;animation:fade .8s 1.1s forwards}@keyframes fade{to{opacity:1}}
-.btn{display:inline-block;border:1px solid var(--line);padding:10px 20px;text-decoration:none;font-weight:500;margin:0 10px 10px 0;transition:background .25s,color .25s,transform .25s}
-.btn.solid{background:var(--ink);color:var(--deep)}.btn:hover{background:var(--acc);color:var(--deep);border-color:var(--acc);transform:translateY(-2px)}
-.drawing{border:1px solid var(--line);padding:12px;background:rgba(8,44,112,.35)}.drawing svg{width:100%;height:auto;display:block}
+.lead{font-size:19px;max-width:40ch;color:var(--soft);margin:12px 0 26px}
+.cta{}@keyframes fade{to{opacity:1}}
+.btn{display:inline-block;border:1px solid var(--line2);padding:12px 24px;text-decoration:none;font-weight:500;margin:0 10px 10px 0;transition:background .25s,color .25s}
+.btn.solid{background:var(--ink);color:var(--deep)}.btn:hover{background:var(--acc);color:var(--deep);border-color:var(--acc)}
+.drawing{border:1px solid var(--line);padding:20px;background:rgba(8,44,112,.35)}.drawing svg{width:100%;height:auto;display:block}
 .draw path,.draw rect,.draw circle{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.4s .3s ease-out forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
-.tb{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-top:0;font-size:12px;color:var(--soft)}
-.tb div{padding:6px 10px;border-right:1px solid var(--line)}.tb div:last-child{border:0}.tb b,.tb4 b{display:block;color:var(--ink);font-weight:500;font-size:13px}
-.tb4{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));border:1px solid var(--line);font-size:12px;color:var(--soft);margin:20px 0}
-.tb4 div{padding:8px 12px;border-right:1px solid var(--line)}.tb4 div:last-child{border:0}
-.tb4.four{grid-template-columns:repeat(4,1fr);margin-bottom:0}.tb4.three{grid-template-columns:repeat(3,1fr);margin-top:0;border-top:0}.card:not(:has(.ph)) h3{font-size:34px}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border:1px solid var(--line);margin:0 0 8px}
-.stats div{padding:16px 18px;border-right:1px solid var(--line);color:var(--soft);font-size:15px}.stats div:last-child{border:0}
-.stats b{display:block;font:600 44px "Barlow Condensed",sans-serif;color:var(--ink)}
-section{padding:64px 0;border-top:1px solid var(--line)}
-.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:30px}.sec-head h2{font-size:44px}.sec-head span{flex:1;border-bottom:1px dashed var(--soft);transform:translateY(-6px)}
+.tb4{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0 28px;border-top:1px solid var(--line);margin:28px 0;padding-top:16px;font-size:14px;color:var(--soft)}
+.tb4 div{padding-bottom:12px}.tb4 b{display:block;margin-top:2px;color:var(--ink);font-weight:500;font-size:17px;line-height:1.35}
+.tb4.four{grid-template-columns:repeat(3,1fr);margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px;padding:36px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:24px;color:var(--soft);font-size:15px}
+.stats b{display:block;font:600 48px/1 "Barlow Condensed",sans-serif;color:var(--ink);margin-bottom:4px}
+section{padding:88px 0 0}
+.sec-head{display:flex;align-items:center;gap:20px;margin-bottom:32px}.sec-head h2{font-size:42px}.sec-head span{flex:1;border-bottom:1px solid var(--line)}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.card{background:var(--bg);border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;text-decoration:none;position:relative;padding:14px;transition:background .3s}
-.card:hover{background:#12489f}.card .cb{padding-top:6px}.ph+.cb{padding-top:14px}
-.sh,.sh2{display:flex;justify-content:space-between;font-size:11px;color:var(--soft);margin-bottom:10px}
-.ph{overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:#fff}.ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
-.card:hover .ph img{transform:scale(1.07)}
-.cb{padding:14px 2px 8px;flex:1}.card h3{font-size:25px;margin-bottom:6px}.card p{margin:0 0 12px;font-size:15.5px;color:var(--soft)}
-dl{margin:0;font-size:12px;display:grid;grid-template-columns:44px 1fr;gap:3px 8px}dt{color:var(--acc)}dd{margin:0;color:var(--soft)}
-.go{align-self:flex-start;border:1px solid var(--line);padding:7px 14px;font-size:14px;font-weight:500;margin-top:8px;position:relative;overflow:hidden;z-index:0}
-.go::before{content:"";position:absolute;inset:0;background:var(--ink);transform:translateX(-101%);transition:transform .35s;z-index:-1}
-.card:hover .go{color:var(--deep)}.card:hover .go::before{transform:none}
-.extra{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;margin-top:20px}
-.extra article,.extra a.lk{border:1px solid var(--line);padding:18px;background:rgba(8,44,112,.4);transition:transform .3s,background .3s}.extra article:hover,.extra a.lk:hover{transform:translateY(-4px);background:rgba(18,72,159,.5)}
-.more{margin:28px 0 0;display:flex;align-items:center;gap:16px;flex-wrap:wrap;color:var(--soft)}.more .btn{margin:0}.extra a.lk{text-decoration:none;display:flex;flex-direction:column;align-items:flex-start}.extra a.lk .go{margin-top:12px}.np{width:100%;height:100%;display:grid;place-items:center;font:12px "IBM Plex Mono",monospace;color:var(--soft);background:radial-gradient(circle,transparent 0 27%,rgba(245,249,255,.35) 27.5% 28.5%,transparent 29% 45%,rgba(245,249,255,.22) 45.5% 46.5%,transparent 47%),linear-gradient(rgba(245,249,255,.3),rgba(245,249,255,.3)) center/1px 100% no-repeat,linear-gradient(rgba(245,249,255,.3),rgba(245,249,255,.3)) center/100% 1px no-repeat,var(--deep)}.np span{background:var(--deep);padding:2px 8px}.extra h3{font-size:24px}.extra .m{font:12px "IBM Plex Mono",monospace;color:var(--acc);margin:4px 0 8px}.extra p{margin:0;font-size:15.5px;color:var(--soft)}
-.job{display:grid;grid-template-columns:200px 1fr;gap:28px;padding:24px 0;border-bottom:1px dashed var(--soft)}.job:last-child{border:0}
-.job .w{color:var(--soft);font-size:15px}.job h3{font-size:28px}.job .o{color:var(--acc);margin:2px 0 10px;font-weight:500}
-ul.t{margin:0;padding-left:18px}ul.t li{margin:5px 0;max-width:70ch}
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}.skills div{border:1px solid var(--line);padding:16px}.skills h3{font-size:22px;margin-bottom:6px}.skills p{margin:0;font-size:15px;color:var(--soft)}
-.contact{font-size:24px;overflow-wrap:anywhere}.contact a{display:inline-block;margin:0 26px 8px 0}
-footer.site{padding:26px 0 40px;border-top:1px solid var(--line);font-size:14px;color:var(--soft)}
+.card{background:var(--bg);border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;text-decoration:none;transition:background .3s}
+a.card:hover{background:#12489f}
+.sh,.sh2{font:500 14px Barlow,sans-serif;color:var(--acc)}.sh{padding:16px 22px 12px}
+.ph{overflow:hidden;aspect-ratio:4/3;background:#fff}.ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.8,.2,1)}a.card:hover .ph img{transform:scale(1.04)}
+.cb{padding:20px 22px 10px;flex:1}.card h3{font-size:28px;margin-bottom:8px}.card:not(:has(.ph)) h3{font-size:32px}
+.card p{margin:0 0 14px;font-size:16px;color:var(--soft)}
+dl{margin:0;font-size:14px;display:grid;grid-template-columns:46px 1fr;gap:4px 10px}dt{color:var(--acc)}dd{margin:0;color:var(--soft)}
+.go{padding:12px 22px 20px;font-weight:500;font-size:15px;background:linear-gradient(var(--ink),var(--ink)) 22px calc(100% - 18px)/0 1px no-repeat;transition:background-size .4s;align-self:flex-start}
+a.card:hover .go{background-size:calc(100% - 44px) 1px}
+.more{margin:32px 0 0;display:flex;align-items:center;gap:18px;flex-wrap:wrap;color:var(--soft)}.more .btn{margin:0}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px}.skills>div{border-top:2px solid var(--line2);padding-top:16px}.skills h3{font-size:24px;margin-bottom:6px}.skills p{margin:0;font-size:16px;color:var(--soft)}
+.job{display:grid;grid-template-columns:220px 1fr;gap:32px;padding:28px 0;border-top:1px solid var(--line)}.job .w{color:var(--soft);font-size:15px}.job h3{font-size:30px}.job .o{color:var(--acc);margin:4px 0 12px;font-weight:500}
+ul.t{margin:0;padding-left:18px}ul.t li{margin:6px 0;max-width:70ch}
+.contact{font-size:26px;line-height:1.45;overflow-wrap:anywhere}.contact a{display:inline-block;margin:0 28px 6px 0}
+footer.site{margin-top:88px;padding:28px 0 44px;border-top:1px solid var(--line);color:var(--soft);font-size:14px}#foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}footer a{color:var(--soft)}
 .view{display:none}.view.on{display:block;animation:wipe .7s cubic-bezier(.2,.8,.2,1)}
 @keyframes wipe{from{clip-path:inset(0 0 100% 0);opacity:.4}to{clip-path:inset(0);opacity:1}}
-.proj.wide{max-width:1120px}.proj{max-width:900px;margin:0 auto;padding:40px 24px 64px}
-.back{font:500 13px "IBM Plex Mono",monospace;text-decoration:none;color:var(--acc);display:inline-block;margin-bottom:18px}.back:hover{text-decoration:underline}
-.pt{font-size:clamp(40px,7vw,72px);margin:6px 0 8px}.role{color:var(--soft);margin:0}
-.note{font-size:12px;color:var(--soft);border-left:2px solid var(--acc);padding:4px 12px;margin:0 0 8px}
-.proj h2{font-size:32px;margin:44px 0 12px;padding-top:18px;border-top:1px solid var(--line)}.proj p{max-width:68ch}
-.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin:28px 0 6px}
-.gal figure{margin:0;border:1px solid var(--line);background:#fff;overflow:hidden}.gal img{width:100%;display:block;height:100%;max-height:420px;object-fit:cover}
-.cap{font-size:12px;color:var(--soft)}
-.pn{display:flex;justify-content:space-between;gap:16px;margin-top:56px;border-top:1px solid var(--line);padding-top:18px;flex-wrap:wrap}.pn a{text-decoration:none;border:1px solid var(--line);padding:10px 16px;max-width:48%;transition:background .25s,color .25s}.pn a:hover{background:var(--ink);color:var(--deep)}
-.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}.rv.in{opacity:1;transform:none}
-.gal figure.rv{clip-path:inset(0 100% 0 0);transition:clip-path .9s cubic-bezier(.2,.8,.2,1),opacity .4s;transition-delay:var(--d,0s)}.gal figure.rv.in{clip-path:inset(0)}
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.hero .wrap{grid-template-columns:1fr}}
-@media(max-width:620px){.contact{font-size:19px}.tb4.four,.tb4.three{grid-template-columns:1fr 1fr}.tb4 div{border-bottom:1px solid var(--line)}.hero h1{font-size:52px}.grid{grid-template-columns:1fr}.job{grid-template-columns:1fr;gap:6px}nav strong{display:none}nav .wrap{padding:0 14px}nav ul{gap:14px;min-width:0;overflow-x:auto;scrollbar-width:none}nav a{font-size:14px;white-space:nowrap}.tb{grid-template-columns:1fr}.tb div{border-right:0;border-bottom:1px solid var(--line)}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.ln i{transform:none}.dim{width:100%}.lead,.cta,.rv{opacity:1;transform:none}.gal figure.rv{clip-path:none}.draw path,.draw rect,.draw circle{stroke-dashoffset:0}html{scroll-behavior:auto}}
+.proj{max-width:880px;margin:0 auto;padding:48px 28px 80px}.proj.wide{max-width:1120px}
+.back{font-weight:500;font-size:15px;text-decoration:none;color:var(--acc);display:inline-block;margin-bottom:12px}.back:hover{text-decoration:underline}
+.sh2{margin:18px 0 6px}.pt{font-size:clamp(42px,7vw,76px);margin:0 0 10px}.role{color:var(--soft);margin:0}
+.note{font-size:14px;color:var(--soft);border-left:2px solid var(--acc);padding:6px 14px;margin:0 0 8px}
+.proj h2{font-size:30px;margin:52px 0 14px;padding-top:20px;border-top:1px solid var(--line)}.proj p{max-width:68ch}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:32px 0 8px}
+.gal figure{margin:0;overflow:hidden;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column}.gal img{width:100%;height:100%;max-height:440px;object-fit:cover;display:block}
+.gal figcaption{background:var(--deep);color:var(--soft);font-size:14px;padding:8px 12px}
+.gal.tall{grid-template-columns:repeat(var(--c,2),1fr)}.gal.tall figure img{aspect-ratio:3/4;max-height:none;height:auto;object-position:50% 30%}
+.cap{font-size:14px;color:var(--soft)}
+.proj p.quote{font:600 clamp(30px,5vw,48px)/1.08 "Barlow Condensed",sans-serif;max-width:24ch;margin:14px 0 22px}
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 28px}.tags span{border:1px solid var(--line2);padding:4px 16px;font-size:15px;color:var(--ink)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:56px;border-top:1px solid var(--line);padding-top:20px;flex-wrap:wrap}.pn a{text-decoration:none;border:1px solid var(--line2);padding:10px 18px;max-width:48%;transition:background .25s,color .25s}.pn a:hover{background:var(--ink);color:var(--deep)}
+.rv{opacity:0;transition:opacity .8s}.rv.in{opacity:1}
+.gal figure.rv{clip-path:inset(0 100% 0 0);transition:clip-path .9s cubic-bezier(.2,.8,.2,1),opacity .4s}.gal figure.rv.in{clip-path:inset(0)}
+.err{padding:24px;background:#fff;color:#082c70;margin:0;font:16px/1.5 sans-serif}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.hero .wrap{grid-template-columns:1fr;gap:40px}.hero{padding-top:56px}.tb4.four{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.grid{grid-template-columns:1fr}.job{grid-template-columns:1fr;gap:6px}nav strong{display:none}nav .wrap{padding:0 14px}nav ul{gap:14px;min-width:0;overflow-x:auto;scrollbar-width:none}nav a{font-size:14px;white-space:nowrap}.hero h1{font-size:38px}.contact{font-size:19px}.gal.tall{grid-template-columns:1fr 1fr}.sec-head h2{font-size:34px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.ln i{transform:none}.dim{width:100%}.lead,.cta,.rv{opacity:1}.gal figure.rv{clip-path:none}.draw path,.draw rect,.draw circle{stroke-dashoffset:0}html{scroll-behavior:auto}}
 
-.proj p.quote{font:600 clamp(30px,5vw,48px)/1.08 "Barlow Condensed",sans-serif;max-width:24ch;margin:14px 0 22px}.tags{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 28px}.tags span{border:1px solid var(--line);padding:4px 14px;font:13px "IBM Plex Mono",monospace;color:var(--acc)}.gal figcaption{background:var(--deep);color:var(--soft);font:12px "IBM Plex Mono",monospace;padding:8px 12px}.gal figure{display:flex;flex-direction:column}.gal figure img{flex:1;min-height:0}.gal.tall{grid-template-columns:repeat(var(--c,2),1fr)}.gal.tall figure img{aspect-ratio:3/4;max-height:none;height:auto;object-fit:cover;object-position:50% 30%}@media(max-width:620px){.gal.tall{grid-template-columns:1fr 1fr}}.err{padding:24px;background:#fff;color:#082c70;margin:0;font:16px/1.5 sans-serif}
+.btn.solid{background:var(--acc);color:#fff;border-color:var(--acc)}.btn:hover,.btn.solid:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+nav a.navcta{color:var(--acc);border-color:var(--acc)}nav a.navcta:hover{background:var(--acc);color:#fff}
+.card{background:var(--paper)}a.card:hover{background:#eef3fb}.go{background-image:linear-gradient(var(--acc),var(--acc))}
+.drawing{--ink:#f5f9ff;--soft:#c5d8f5;--line:rgba(245,249,255,.3);border:0;padding:28px;background-color:#0c3b92;background-image:linear-gradient(rgba(245,249,255,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(245,249,255,.16) 1px,transparent 1px),linear-gradient(rgba(245,249,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(245,249,255,.06) 1px,transparent 1px);background-size:80px 80px,80px 80px,16px 16px,16px 16px}
+.gal figcaption{background:#fff;color:var(--soft);border-top:1px solid var(--line)}
+.pn a:hover{background:var(--acc);color:#fff;border-color:var(--acc)}.stats b{color:var(--acc)}
+
+#bar{background:var(--or)}
+.drawing{background-color:var(--sl)}
+.drawing svg g[stroke-width="1"] line{stroke:var(--or)}
+.drawing svg marker path{fill:var(--or)}
+.drawing svg text{fill:var(--or)}
+a.card:hover{background:#f2f6f9}
+.go{background-image:linear-gradient(var(--or),var(--or))}
+.note{border-left-color:var(--or)}
+.skills>div{border-top:3px solid var(--or)}
+.btn:hover,.btn.solid:hover{background:var(--sl);border-color:var(--sl);color:#fff}
+.gal figure.rv{clip-path:none;opacity:0;transition:opacity .8s}
+.gal figure.rv.in{clip-path:none;opacity:1}
+.gal figure.rv img{clip-path:inset(0 100% 0 0);transition:clip-path .9s cubic-bezier(.2,.8,.2,1)}
+.gal figure.rv.in img{clip-path:inset(0)}
+@media(prefers-reduced-motion:reduce){.gal figure.rv img{clip-path:none}}
+
+.drawing{background:none!important;border:0;padding:0}
+.jet{width:100%;height:auto;display:block;overflow:visible}
+.jet .ln path{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.4s .3s ease-out forwards}
+.jet .ln path:nth-child(2){stroke-dasharray:6 4 1 4;stroke-dashoffset:0;opacity:0;animation:fin .6s 1.6s forwards}
+.jet .ln{animation:lfade .8s 4.6s forwards}
+.jet .dm{opacity:0;animation:fin .6s 2s forwards,fout .6s 3.2s forwards}
+.jet .rvr{transform-origin:0 0;transform:scaleX(0);animation:rev 1.6s 3s linear forwards}
+.jet .scan{opacity:0;animation:scan 1.6s 3s linear forwards}
+.jet .fl{transform-box:fill-box;transform-origin:100% 50%;opacity:0;animation:fin .5s 4.6s forwards,flick .13s 4.6s infinite alternate}
+.jet .fl2{animation-duration:.5s,.09s}
+.jet .fly{animation:fly 3.4s 5s ease-in-out infinite alternate}
+@keyframes fin{to{opacity:1}}@keyframes fout{to{opacity:0}}@keyframes lfade{to{opacity:.35}}
+@keyframes rev{to{transform:scaleX(1)}}
+@keyframes scan{0%{opacity:1;transform:translateX(0)}92%{opacity:1}100%{opacity:0;transform:translateX(637px)}}
+@keyframes flick{from{transform:scaleX(.8)}to{transform:scaleX(1.12)}}
+@keyframes fly{to{transform:translateY(-7px)}}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}.chips span{border:1px solid var(--line);padding:2px 9px;font-size:13px;color:var(--soft)}.chips.big span{font-size:15px;color:var(--ink);border-color:var(--line2);padding:3px 12px}
+.sub{font-size:22px;margin:22px 0 8px}
+@media(prefers-reduced-motion:reduce){.jet .ln path{stroke-dashoffset:0}.jet .ln path:nth-child(2){opacity:1}.jet .ln{opacity:.35}.jet .dm,.jet .scan{opacity:0}.jet .rvr{transform:none}.jet .fl{opacity:1}.jet .fly{animation:none}}
+
+.drawing canvas{width:100%;display:block}
+.drawing.gl .jet{display:none}
+
+.hero-img{width:100%;height:auto;max-height:460px;object-fit:contain;display:block}
+.lead2{font-size:22px;line-height:1.5;max-width:44ch;margin:8px 0 0}
+.ab-story{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:start}
+.ab-ph{display:grid;grid-template-columns:1fr 1fr;gap:12px}.ab-ph figure{margin:0;border:1px solid var(--line)}.ab-ph img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}.ab-ph figcaption{font-size:13px;color:var(--soft);padding:6px 8px}
+.ab-hob{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.ab-hob figure{margin:0;border:1px solid var(--line);background:#fff}.ab-hob img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 35%;display:block}.ab-hob figure>div{padding:16px 18px 6px}.ab-hob h3{font-size:26px;margin-bottom:6px}.ab-hob p{font-size:16px;color:var(--soft)}
+@media(max-width:820px){.ab-story{grid-template-columns:1fr}.ab-hob{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div id="bar"></div>
-<nav><div class="wrap"><strong id="brand"></strong><ul><li><a href="#projects">Projects</a></li><li><a href="#/all">All projects</a></li><li id="navabout"><a href="#/about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+<nav><div class="wrap"><strong id="brand"></strong><ul><li><a href="#projects">Projects</a></li><li><a href="#/all">All projects</a></li><li id="navabout"><a href="#/about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li><li><a data-resume href="#">Resume</a></li><li><a class="navcta" href="#contact">Contact</a></li></ul></div></nav>
 
 <main id="home" class="view on">
 <header class="hero"><div class="wrap">
 <div>
-<div class="eyebrow" id="eyebrow"></div>
 <h1 id="h1"></h1>
-<div class="dim"><span>SCALE 1:1 &nbsp; TOL +/-0.005</span></div>
 <p class="lead" id="lead"></p>
-<div class="cta"><a class="btn solid" href="#projects">View projects</a><a class="btn" id="aboutbtn" href="#/about">About me</a><a class="btn" id="mailbtn" href="#">Email me</a></div>
+<div class="cta"><a class="btn solid" href="#projects">View projects</a><a class="btn" data-resume href="#">Download Resume</a><a class="btn" id="aboutbtn" href="#/about">About me</a><a class="btn" id="mailbtn" href="#">Email me</a></div>
 </div>
-<div><div class="drawing"><svg class="draw" viewBox="0 0 520 330" fill="none" stroke="#f5f9ff" stroke-width="1.6" role="img" aria-label="Dimensioned drawing of a mounting bracket">
-<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#f5f9ff" stroke="none" style="stroke-dasharray:none;stroke-dashoffset:0"/></marker></defs>
-<rect x="90" y="80" width="340" height="170" rx="14" pathLength="1"/>
-<circle cx="130" cy="120" r="14" pathLength="1"/><circle cx="390" cy="120" r="14" pathLength="1"/>
-<circle cx="130" cy="210" r="14" pathLength="1"/><circle cx="390" cy="210" r="14" pathLength="1"/>
-<rect x="200" y="140" width="120" height="50" rx="25" pathLength="1"/>
-<line x1="60" y1="165" x2="460" y2="165" stroke-width=".8" stroke-dasharray="14 4 2 4" style="animation:none;stroke-dashoffset:0"/>
-<line x1="260" y1="60" x2="260" y2="290" stroke-width=".8" stroke-dasharray="14 4 2 4" style="animation:none;stroke-dashoffset:0"/>
-<g stroke-width="1" style="stroke-dasharray:none">
-<line x1="90" y1="285" x2="430" y2="285" marker-start="url(#a)" marker-end="url(#a)" style="animation:none;stroke-dashoffset:0;stroke-dasharray:none"/>
-<line x1="90" y1="250" x2="90" y2="292" style="animation:none;stroke-dashoffset:0;stroke-dasharray:none"/><line x1="430" y1="250" x2="430" y2="292" style="animation:none;stroke-dashoffset:0;stroke-dasharray:none"/>
-<line x1="470" y1="80" x2="470" y2="250" marker-start="url(#a)" marker-end="url(#a)" style="animation:none;stroke-dashoffset:0;stroke-dasharray:none"/>
-<line x1="430" y1="80" x2="477" y2="80" style="animation:none;stroke-dashoffset:0;stroke-dasharray:none"/><line x1="430" y1="250" x2="477" y2="250" style="animation:none;stroke-dashoffset:0;stroke-dasharray:none"/>
-</g>
-<g fill="#f5f9ff" stroke="none" font-family="Barlow,sans-serif" font-size="15">
-<text x="238" y="278">340</text><text x="480" y="170" transform="rotate(90 480 170)" text-anchor="middle">170</text>
-<text x="146" y="104">Ø 28</text><text x="214" y="132" font-size="13">SLOT 120 x 50</text>
-</g>
-</svg></div>
-<div class="tb"><div>Drawn by<b id="drawn"></b></div><div>Material<b>Aluminum 6061</b></div><div>Scale<b>1 : 2</b></div></div></div>
+<div><div class="drawing"><img class="hero-img" alt="Articulated robotic arm with an open gripper" src="images/hero-robot-arm.jpg"></div>
 </div>
-<div class="wrap" style="display:block;margin-top:40px"><div class="tb4 four" id="tb1"></div><div class="tb4 three" id="tb2"></div></div></header>
+</div>
+<div class="wrap facts"><div class="tb4 four" id="tb1"></div></div></header>
 <div class="wrap"><div class="stats" id="stats"></div></div>
 
 <section id="projects"><div class="wrap">
@@ -142,6 +165,7 @@ footer.site{padding:26px 0 40px;border-top:1px solid var(--line);font-size:14px;
 <main id="project" class="view"><div class="proj" id="pbody"></div></main>
 
 <script>
+const IMG={};const im=n=>IMG[n]||"images/"+n;
 const $=s=>document.querySelector(s);
 const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const slug=t=>t.toLowerCase().replace(/&/g,' and ').normalize('NFKD').replace(/[^\w\s-]/g,'').trim().replace(/[\s_]+/g,'-').replace(/-+/g,'-');
@@ -152,64 +176,73 @@ for(const raw of t.split(/\r?\n/)){const line=raw.trim();
  if(raw[0]==='#')continue;
  let m=line.match(/^\[(\w+)\]$/);
  if(m&&raw[0]==='['){type=m[1].toLowerCase();key=null;sec=null;
-  if(type==='site')cur=o.site;else if(type==='job'){cur={items:[]};o.jobs.push(cur)}else if(type==='project'){cur={sections:[]};o.projects.push(cur)}else if(type==='about'){cur=o.about={paras:[],galleries:[]}}else cur=null;continue}
+  if(type==='site')cur=o.site;else if(type==='job'){cur={items:[]};o.jobs.push(cur)}else if(type==='project'){cur={sections:[]};o.projects.push(cur)}else if(type==='about'){cur=o.about={paras:[],galleries:[],hobbies:[]}}else cur=null;continue}
  if(type==='stats'||type==='skills'){const a=line.split('|');(type==='stats'?o.stats:o.skills).push([a[0].trim(),a.slice(1).join('|').trim()]);continue}
  if(!cur)continue;
  if(line.startsWith('- ')){const v=line.slice(2).trim();if(type==='project'){if(!sec){sec={h:'',items:[]};cur.sections.push(sec)}sec.items.push(v)}else cur.items.push(v);key='*b';continue}
  m=line.match(/^([a-z_]+):\s*(.*)$/);
- if(m&&raw[0]!==' '&&raw[0]!=='\t'){key=m[1];if(type==='about'&&key==='para'){cur.paras.push(m[2]);key=null;continue}if(type==='about'&&key==='gallery'){cur.galleries.push({t:m[2],photos:[]});key=null;continue}if(type==='about'&&key==='photo'){let g=cur.galleries[cur.galleries.length-1];if(!g){g={t:cur.photos_title||'Photos',photos:[]};cur.galleries.push(g)}const a=m[2].split('|');g.photos.push({f:a[0].trim(),c:a.slice(1).join('|').trim()});key=null;continue}if(key==='section'&&type==='project'){sec={h:m[2],items:[]};cur.sections.push(sec);key=null}else cur[key]=m[2];continue}
+ if(m&&raw[0]!==' '&&raw[0]!=='\t'){key=m[1];if(type==='about'&&key==='para'){cur.paras.push(m[2]);key=null;continue}if(type==='about'&&key==='hobby'){const q=m[2].split('|').map(s=>s.trim());cur.hobbies.push({t:q[0],x:q[1]||'',f:q[2]||''});key=null;continue}if(type==='about'&&key==='gallery'){cur.galleries.push({t:m[2],photos:[]});key=null;continue}if(type==='about'&&key==='photo'){let g=cur.galleries[cur.galleries.length-1];if(!g){g={t:cur.photos_title||'Photos',photos:[]};cur.galleries.push(g)}const a=m[2].split('|');g.photos.push({f:a[0].trim(),c:a.slice(1).join('|').trim()});key=null;continue}if(key==='section'&&type==='project'){sec={h:m[2],items:[]};cur.sections.push(sec);key=null}else cur[key]=m[2];continue}
  if(key==='*b'){const a=type==='project'?sec.items:cur.items;a[a.length-1]+=' '+line;continue}
  if(key)cur[key]+=' '+line}
 return o}
 let S,PRJ,HOME,PG;
-fetch('content.txt?'+Date.now()).then(r=>{if(!r.ok)throw 0;return r.text()}).then(t=>{S=parse(t);init()}).catch(()=>{document.body.insertAdjacentHTML('afterbegin','<p class="err">Could not load content.txt. If you opened index.html straight from your computer, view the site through GitHub Pages instead, or run a local server in this folder.</p>')});
-const card=(p,l)=>{const a=p.page,t=a?'a':'div';return `<${t} class="card rv"${a?` href="#/project/${p.slug}"`:''}><div class="sh"><span>${esc(l)}</span><span>${esc(p.type)}</span></div>${p.imgs.length?`<div class="ph"><img src="images/${esc(p.imgs[0])}" alt="${esc(p.title)}" loading="lazy"></div>`:''}<div class="cb"><h3>${esc(p.title)}</h3><p>${esc(p.summary)}</p><dl>${p.org?`<dt>Org</dt><dd>${esc(p.org)}</dd>`:''}${p.tools?`<dt>Tools</dt><dd>${esc(p.tools)}</dd>`:''}</dl></div>${a?'<span class="go">View project</span>':''}</${t}>`};
+fetch('content.txt?'+Date.now()).then(r=>{if(!r.ok)throw 0;return r.text()}).then(x=>{S=parse(x);init()}).catch(()=>{document.body.insertAdjacentHTML('afterbegin','<p class="err">Could not load content.txt. If you opened index.html straight from your computer, view the site through GitHub Pages instead.</p>')});
+const card=(p,l)=>{const a=p.page,t=a?'a':'div';return `<${t} class="card rv"${a?` href="#/project/${p.slug}"`:''}><div class="sh">${esc(p.type)}</div>${p.imgs.length?`<div class="ph"><img src="${im(p.imgs[0])}" alt="${esc(p.title)}" loading="lazy"></div>`:''}<div class="cb"><h3>${esc(p.title)}</h3><p>${esc(p.summary)}</p><dl>${p.org?`<dt>Org</dt><dd>${esc(p.org)}</dd>`:''}${p.tools?`<dt>Tools</dt><dd>${esc(p.tools)}</dd>`:''}</dl>${p.sk&&p.sk.length?`<div class="chips">${p.sk.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:''}</div>${a?'<span class="go">View project</span>':''}</${t}>`};
 function init(){const s=S.site;
- PRJ=S.projects;PRJ.forEach(p=>{p.slug=p.slug||slug(p.title||'');p.imgs=(p.images||'').split(',').map(x=>x.trim()).filter(Boolean);p.main=yes(p.main);p.ill=yes(p.illustrative);p.page=!!(p.overview||p.sections.some(x=>x.items.length))});
+ PRJ=S.projects;PRJ.forEach(p=>{p.slug=p.slug||slug(p.title||'');p.imgs=(p.images||'').split(',').map(x=>x.trim()).filter(Boolean);p.main=yes(p.main);p.ill=yes(p.illustrative);p.sk=(p.skills||'').split(',').map(x=>x.trim()).filter(Boolean);p.page=!!(p.overview||p.sections.some(x=>x.items.length))});
  HOME=PRJ.filter(p=>p.main);PG=PRJ.filter(p=>p.page);
  document.title=(s.name||'Portfolio')+' | Portfolio';$('#brand').textContent=(s.name||'').toUpperCase();
- $('#eyebrow').textContent=s.eyebrow||'';$('#h1').innerHTML=(s.headline||'').split('|').map(x=>`<span class="ln"><i>${esc(x.trim())}</i></span>`).join('');
- $('#lead').textContent=s.intro||'';$('#drawn').textContent=s.name||'';$('#mailbtn').href='mailto:'+(s.email||'');
+ $('#h1').textContent=s.name||'';
+ $('#lead').textContent=s.intro||'';$('#mailbtn').href='mailto:'+(s.email||'');
  const cell=(a,b)=>`<div>${a}<b>${esc(b)}</b></div>`;
- $('#tb1').innerHTML=cell('Name',s.name)+cell('Discipline',s.discipline)+cell('Based in',s.based)+cell('Status',s.status);
- $('#tb2').innerHTML=cell('Education',s.education)+cell('Tools',s.tools)+cell('Sheet',s.sheet);
+ $('#tb1').innerHTML=cell('Education',s.education)+cell('Based in',s.based)+cell('Tools',s.tools);
  $('#stats').innerHTML=S.stats.map(([n,l])=>{const m=n.match(/^(\d+)(\D*)$/);return `<div class="rv"><b${m?` data-n="${m[1]}" data-s="${esc(m[2])}"`:''}>${m?0:esc(n)}</b>${esc(l)}</div>`}).join('');
  $('#grid').innerHTML=HOME.map((p,i)=>card(p,`Sheet ${i+1} of ${HOME.length}`)).join('');
  $('#skillgrid').innerHTML=S.skills.map(([h,t])=>`<div class="rv"><h3>${esc(h)}</h3><p>${esc(t)}</p></div>`).join('');
  $('#jobs').innerHTML=S.jobs.map(j=>`<div class="job rv"><div class="w">${esc(j.when)}<br>${esc(j.place)}</div><div><h3>${esc(j.title)}</h3><div class="o">${esc(j.org)}</div>${j.items.length?`<ul class="t">${j.items.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}</div></div>`).join('');
  const ln=(s.linkedin||'').replace(/^(?!https?:)/,'https://');
- $('#contactp').innerHTML=`${esc(s.contact_line)}<br><a href="mailto:${esc(s.email)}">${esc(s.email)}</a>${s.linkedin?`<a href="${esc(ln)}">LinkedIn</a>`:''}`;
- $('#foot').textContent=s.footer||'';
+ $('#contactp').innerHTML=`${esc(s.contact_line)}<br><a href="mailto:${esc(s.email)}">${esc(s.email)}</a>${s.linkedin?`<a href="${esc(ln)}">LinkedIn</a>`:''}<a href="#" data-resume>Resume</a>`;
+ $('#foot').innerHTML=`<span>${esc(s.footer)}</span><a href="mailto:${esc(s.email)}">${esc(s.email)}</a>`;
  if(!S.about){$('#navabout').style.display='none';$('#aboutbtn').style.display='none'}
  watch($('#home'));route()}
-const about=()=>{const a=S.about;return `<a class="back" href="#projects">Back to home</a><div class="sh2"><span>About</span><span>${esc(S.site.name)}</span></div><h1 class="pt">${esc(a.title||'About me')}</h1>
-${a.quote?`<p class="quote">${esc(a.quote)}</p>`:''}${a.interests?`<div class="tags">${a.interests.split('|').map(x=>`<span>${esc(x.trim())}</span>`).join('')}</div>`:''}
-${a.paras.map(x=>`<p class="rv">${esc(x)}</p>`).join('')}
-${a.galleries.filter(g=>g.photos.length).map(g=>`<h2>${esc(g.t)}</h2><div class="gal tall" style="--c:${g.photos.length<=3?g.photos.length:2}">${g.photos.map(p=>`<figure class="rv"><img src="images/${esc(p.f)}" alt="${esc(p.c||g.t)}">${p.c?`<figcaption>${esc(p.c)}</figcaption>`:''}</figure>`).join('')}</div>`).join('')}
-<div class="pn"><a href="#/all">See all projects</a><a href="#contact">Get in touch</a></div>`};
+const about=()=>{const a=S.about,ph=a.galleries[0]?a.galleries[0].photos:[];
+const fig=p=>`<figure><img src="${im(p.f)}" alt="${esc(p.c||'')}">${p.c?`<figcaption>${esc(p.c)}</figcaption>`:''}</figure>`;
+return `<a class="back" href="#projects">Back to home</a><div class="sh2">About</div><h1 class="pt">${esc(a.title||'About me')}</h1>
+<p class="lead2">${esc(a.lead)}</p>
+<h2>${esc(a.story_title||'About')}</h2>
+<div class="ab-story"><div>${a.paras.map(x=>`<p>${esc(x)}</p>`).join('')}</div>${ph.length?`<div class="ab-ph">${ph.map(fig).join('')}</div>`:''}</div>
+${a.hobbies.length?`<h2>Outside of engineering</h2><div class="ab-hob">${a.hobbies.map(h=>`<figure>${h.f?`<img src="${im(h.f)}" alt="${esc(h.t)}">`:''}<div><h3>${esc(h.t)}</h3><p>${esc(h.x)}</p></div></figure>`).join('')}</div>`:''}
+${a.looking?`<h2>What I am looking for</h2><p>${esc(a.looking)}</p><p><a class="btn solid" href="mailto:${esc(S.site.email)}">Email me</a><a class="btn" data-resume href="#">Download Resume</a></p>`:''}
+<div class="pn"><a href="#/all">See all projects</a><a href="#projects">Back to home</a></div>`};
 const all=()=>`<a class="back" href="#projects">Back to home</a><h1 class="pt">All projects</h1><p class="role">Ordered by what I find most interesting. Entries with a button have their own page.</p><div class="grid" style="margin-top:28px">${PRJ.map((p,i)=>card(p,`Sheet ${i+1} of ${PRJ.length}`)).join('')}</div>`;
 function page(p){const i=PG.indexOf(p),a=PG[(i+PG.length-1)%PG.length],b=PG[(i+1)%PG.length];
 const sh=p.main?`Sheet ${HOME.indexOf(p)+1} of ${HOME.length}`:`Sheet ${PRJ.indexOf(p)+1} of ${PRJ.length}`;
 const cells=[['Role',p.role],['Period',p.period],['Org',p.org],['Tools',p.tools]].filter(c=>c[1]).map(c=>`<div>${c[0]}<b>${esc(c[1])}</b></div>`).join('');
-return `<a class="back" href="#projects">Back to projects</a><div class="sh2"><span>${sh}</span><span>${esc(p.type)}</span></div><h1 class="pt">${esc(p.title)}</h1>
+return `<a class="back" href="#projects">Back to projects</a><div class="sh2">${esc(p.type)}</div><h1 class="pt">${esc(p.title)}</h1>
 ${cells?`<div class="tb4">${cells}</div>`:''}${p.note?`<p class="note">${esc(p.note)}</p>`:''}
 ${p.overview?`<h2>Overview</h2><p>${esc(p.overview)}</p>`:''}
-${p.imgs.length?`<div class="gal">${p.imgs.map(k=>`<figure class="rv"><img src="images/${esc(k)}" alt="${esc(p.title)}"></figure>`).join('')}</div>`:''}${p.ill?'<p class="cap">* Illustrative images of similar complexity. Proprietary design images are omitted under NDA.</p>':''}
-${p.sections.filter(g=>g.items.length).map(g=>`<h2 class="rv">${esc(g.h||'Highlights')}</h2><ul class="t">${g.items.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>`).join('')}
-${p.outcome?`<h2>Outcome</h2><p>${esc(p.outcome)}</p>`:''}
+${p.imgs.length?`<div class="gal">${p.imgs.map(k=>`<figure class="rv"><img src="${im(k)}" alt="${esc(p.title)}"></figure>`).join('')}</div>`:''}${p.ill?'<p class="cap">* Illustrative images of similar complexity. Proprietary design images are omitted under NDA.</p>':''}
+${(()=>{const S=p.sections.filter(g=>g.items.length),T=/^(takeaways)$/i,d=S.filter(g=>!T.test(g.h)&&!g.h.startsWith('*')),x=S.filter(g=>g.h.startsWith('*'));return (d.length?`<h2>Design and engineering</h2>${d.map(g=>`<h3 class="sub">${esc(g.h||'Highlights')}</h3><ul class="t">${g.items.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>`).join('')}`:'')+x.map(g=>`<h2>${esc(g.h.replace(/^\*\s*/,''))}</h2><ul class="t">${g.items.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>`).join('')})()}
+${p.outcome?`<h2>Results</h2><p>${esc(p.outcome)}</p>`:''}${p.challenges?`<h2>Challenges and discussion</h2><p>${esc(p.challenges)}</p>`:''}${(()=>{const g=p.sections.find(g=>/^takeaways$/i.test(g.h)&&g.items.length);return g?`<h2>Takeaways</h2><ul class="t">${g.items.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>`:''})()}${p.sk&&p.sk.length?`<h2>Skills used</h2><div class="chips big">${p.sk.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:''}
 <div class="pn"><a href="#/project/${a.slug}">Previous: ${esc(a.title)}</a><a href="#/project/${b.slug}">Next: ${esc(b.title)}</a></div>`}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');const n=e.target.querySelector('[data-n]');if(n)count(n);io.unobserve(e.target)}}),{threshold:.12});
 function watch(root){root.querySelectorAll('.rv').forEach((el,i)=>{el.style.setProperty('--d',(i%3)*.12+'s');io.observe(el)})}
 function count(n){const t=+n.dataset.n,s=n.dataset.s||'',t0=performance.now();(function f(now){const k=Math.min(1,(now-t0)/1400);n.textContent=Math.round(t*(1-Math.pow(1-k,3)))+(k==1?s:'');if(k<1)requestAnimationFrame(f)})(t0)}
 function show(id){document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));const v=$('#'+id);void v.offsetWidth;v.classList.add('on')}
 function route(){const h=location.hash,m=h.match(/^#\/project\/([\w-]+)/);
-if(h==='#/about'&&S.about){$('#pbody').className='proj';$('#pbody').innerHTML=about();show('project');scrollTo(0,0);watch($('#pbody'));return}
+if(h==='#/about'&&S.about){$('#pbody').className='proj wide';$('#pbody').innerHTML=about();show('project');scrollTo(0,0);watch($('#pbody'));return}
 if(h==='#/all'){$('#pbody').className='proj wide';$('#pbody').innerHTML=all();show('project');scrollTo(0,0);watch($('#pbody'));return}
 if(m){const p=PG.find(x=>x.slug==m[1]);if(p){$('#pbody').className='proj';$('#pbody').innerHTML=page(p);show('project');scrollTo(0,0);watch($('#pbody'));return}}
 if(!$('#home').classList.contains('on'))show('home');const el=h.length>1&&!h.startsWith('#/')?document.getElementById(h.slice(1)):null;
 if(el)setTimeout(()=>el.scrollIntoView(),30);else scrollTo(0,0)}
 addEventListener('hashchange',()=>{if(S)route()});
 addEventListener('scroll',()=>{const d=document.documentElement;$('#bar').style.transform=`scaleX(${scrollY/Math.max(1,d.scrollHeight-innerHeight)})`},{passive:true});
+</script>
+
+
+<script>
+document.addEventListener('click',function(e){const a=e.target.closest&&e.target.closest('[data-resume]');if(!a)return;e.preventDefault();
+ const w=window.open('Gabriel_Mareze_Resume.pdf','_blank');if(!w)location.href='Gabriel_Mareze_Resume.pdf'});
 </script>
 </body>
 </html>

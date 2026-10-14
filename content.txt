@@ -1,6 +1,6 @@
 # =====================================================================
 # CONTENT FILE: edit this file to change anything on your website.
-# No coding needed. Just change the text after the colons.
+# No coding needed. Change the text after the colons, then commit.
 #
 # RULES
 #  - Lines starting with # are notes and are ignored.
@@ -10,24 +10,36 @@
 #  - Pictures: upload them to the "images" folder, then list the file
 #    names after "images:" separated by commas. No pictures? Leave it out.
 #  - Projects show in the order they appear below. Put "main: yes" on the
-#    ones you want on the first page. The rest show on the All projects page.
+#    ones you want on the first page (6 works best). The rest show on the
+#    All projects page.
 #  - A project gets its own page only if it has an "overview:" or bullets.
 #  - To add a project: copy a whole [project] block, paste it where you
-#    want it to appear, and change the text.
-#  - To remove something: delete its block.
+#    want it, and change the text. To remove one: delete its block.
+#
+# PROJECT KEYS
+#  title, main, type, summary, org, tools, role, period, images, note,
+#  overview, outcome (shows as Results), challenges, skills (comma list).
+#  "section: Name" starts a group of bullets under Design and engineering.
+#  "section: * Name" makes its own heading. "section: Takeaways" is special.
+#
+# ABOUT PAGE KEYS (the [about] block at the bottom)
+#  title, lead, story_title, para (repeat for each paragraph),
+#  "gallery: Name" then "photo: file.jpg | caption" lines,
+#  "hobby: Title | text | file.jpg" (repeat), looking.
+#
+# RESUME: replace the file Gabriel_Mareze_Resume.pdf with a new PDF that
+# has the same name and the Download Resume buttons will open the new one.
 # =====================================================================
 
 [site]
 name: Gabriel Mareze
-eyebrow: Mechanical engineer
 headline: From sketch | to production.
-intro: I design hardware from first sketch to manufacturable part, from satellite brackets to consumer products.
+intro: Mechanical engineering student. Engineering intern at Astranis.
 discipline: Mechanical Engineering
 based: San Francisco, CA
 status: Engineering Intern, Astranis
 education: UCF, B.S. ME, Dec 2027
 tools: SolidWorks, Ansys, MATLAB, Python
-sheet: 01 of 01, Rev C, Oct 2026
 email: gabrielmareze@gmail.com
 linkedin: linkedin.com/in/gabrielmareze
 contact_line: Open to aerospace, robotics, and advanced hardware internships.
@@ -105,6 +117,12 @@ section: Tolerance stack and manufacturing documentation
 - Managed tolerance stacks across a large number of interdependent components on a chassis where stack-up errors had no room to be absorbed
 - Generated full manufacturing drawing packages for all physical components; all drawings currently in production
 outcome: All physical components in active manufacturing. Redesigned chassis and constraint brackets resolved both the instability and wheel splay identified during testing; robot has completed structured driving validation.
+skills: Root-cause analysis, Stability and center of gravity, GD&T and tolerance stacks, Design to cost, Manufacturing drawings
+challenges: The chassis became unstable during development and the drive wheels splayed under load, with very little room to add structure. Fixing it meant finding the root cause first, then keeping the tolerance stack manageable across the full drawing package.
+section: Takeaways
+- Find the root cause before changing the design.
+- A tight package decides where the structure can go.
+- Check tolerance stacks early, before drawings are released.
 
 [project]
 title: NASA Student Launch: Air-Brakes
@@ -129,6 +147,12 @@ section: Electronics fabrication and system documentation
 - Sourced and quoted all flight electronics; soldered flight hardware and assembled the avionics bay
 - Contributed to PDR and CDR technical reports covering control system design, electronics, and test procedures per NASA safety standards
 outcome: The redesigned system achieved repeatable, precise drag modulation validated across subscale and full-scale flights. Rocket successfully launched and recovered in summer 2025 with the air-brake system performing as designed.
+skills: PID control, Embedded programming (ESP32), Flight simulation (OpenRocket), Sensor integration, Debugging and failure analysis
+challenges: A subscale failure had to be root-caused and the mechanism redesigned. The controller also had to trim a rocket toward a 4,850 ft apogee against a simulated overshoot, and an in-flight power failure was traced to an unsoldered battery connection.
+section: Takeaways
+- Check wiring and connections before blaming the software.
+- Subscale flights are the cheapest place to find failures.
+- Good documentation lets other people build and debug the system.
 
 [project]
 title: Automated Card Dealer
@@ -152,6 +176,12 @@ section: Mechanical architecture
 section: User interface
 - Menu-driven OLED interface for selecting game type, player count, and deal order; input handled through physical buttons wired to ESP32 GPIO
 outcome: System reliably completes deal and shuffle cycles across standard card decks. Ongoing work targets shuffle consistency and wireless control via the ESP32’s WiFi interface.
+skills: Mechanism design, Servo and stepper control, Embedded programming, Sensor integration, FDM 3D printing
+challenges: Servos and a stepper motor have to work in sequence, and cards are unforgiving, so small errors cause jams or misdeals. Shuffle consistency is still being improved.
+section: Takeaways
+- Coordinate several actuators with a clear sequence of states.
+- Sensors catch errors the mechanism cannot.
+- Design the mechanism and the firmware together.
 
 [project]
 title: Reaction Wheel Test Fixture
@@ -160,6 +190,7 @@ type: Work
 summary: A 3D printed fixture that places calibrated magnets at precise Gauss levels to find a sensor switching threshold.
 org: Astranis Space Technologies
 tools: SolidWorks, 3D printing, Altium
+images: rw-fixture-1.jpg
 role: Mechanical Engineering Intern
 period: Aug 2026 to Present
 overview: I own the test fixtures used for reaction wheel testing. The fixture positions calibrated magnets at precise Gauss levels from a PCB-mounted Hall-effect sensor to find the sensor’s switching threshold.
@@ -167,6 +198,16 @@ section: What I did
 - Designed a 3D printed fixture that positions calibrated magnets at precise Gauss levels
 - Paired the Hall-effect sensor with actuators that give position, velocity, and acceleration feedback
 - Worked in the PCB lab and co-designed parts that aid PCB manufacturing
+outcome: In use. The fixture is used to find the Hall-effect sensor switching threshold for reaction wheel testing.
+skills: Test fixture design, Sensor characterization, 3D printing, Working with electronics teams, Precision positioning
+challenges: The fixture has to place calibrated magnets at precise field strengths relative to a PCB-mounted sensor, so repeatable positioning matters most. It also has to work with the sensor feedback and be easy for the PCB lab to use.
+section: * Fixture hardware
+- 3D printed black housing with a green insert
+- Rotating dial with a marked scale, holding a magnet at the top
+- PCB mounted on standoffs under the housing, with red terminals on the front edge
+section: Takeaways
+- Design a test fixture around the measurement it has to make.
+- Work with the electronics team early.
 
 [project]
 title: Canoe Cart (Yak Thang)
@@ -197,20 +238,40 @@ section: Rail cradle system
 - Designed the hull support rail geometry to accommodate canoe and kayak hull profiles without requiring hull-specific customization
 - Strap attachment points integrated directly into the rail bends; no separate hardware required
 outcome: Currently in manufacturing. Designed for self-assembly by the end user with no specialized tools. Full sheet metal flat pattern and production drawing package complete through Design Launchers, LLC.
+skills: Sheet metal design, Flat patterns and bend allowance, Design for assembly, Rivet joints, Load path design
+challenges: Bend radii, wall thickness, and corner interferences limited what could be built from flat stock. Welding was ruled out because customers assemble the cart themselves, so the joints had to be redesigned around rivets.
+section: Takeaways
+- Design inside the process: bend limits and flat patterns shape the geometry.
+- The end user’s assembly changes the joint choice.
+- Mirrored parts cut the number of unique components.
 
 [project]
 title: Arduino Desk Pet
 main: yes
 type: Personal
-summary: A desk pet with animated mood states and EEPROM persistence, improved through hardware testing.
+summary: A desk pet with animated eyes, a servo-driven tail, and EEPROM persistence, improved through hardware testing.
 org: Personal project
 tools: Arduino, C++, EEPROM
+images: arduino-pet-3.jpg, arduino-pet-2.jpg, arduino-pet-1.jpg
 role: Personal project
-overview: A desk pet built on an Arduino, with animated mood states. I improved it through repeated rounds of hardware testing.
+overview: A desk pet in a 3D printed, cat-shaped enclosure. An OLED screen shows animated eyes, a micro servo moves its tail, and an Arduino Uno runs the pet’s mood states, which are saved with EEPROM. I improved the design through repeated rounds of hardware testing.
 section: What I did
 - Programmed animated mood states
+- Built a servo-driven tail
 - Used EEPROM for persistence
 - Iterated on the design through hardware testing
+outcome: A working desk pet that shows animated eyes on its screen and moves its tail. The photos show the finished enclosure, the electronics inside it, and the parts during assembly.
+skills: 3D printing and enclosure design, Embedded programming (Arduino C++), Servo and display integration, Packaging electronics, Iterative prototyping
+challenges: Fitting an Arduino Uno, a breadboard, the tail servo, and wiring into a small printed enclosure took several rounds, along with the openings for the USB cable, button, and power jack.
+section: Takeaways
+- Plan the enclosure openings and cable routing together with the electronics layout.
+- Test on the bench before closing the enclosure.
+section: * Build and hardware
+- Arduino Uno as the controller
+- OLED display for the animated eyes
+- 9g micro servo that moves the tail
+- Push button, USB opening, and DC power jack on the front panel, with a battery holder for portable power
+- 3D printed enclosure, designed in separate parts for the body, lid, and display head
 
 [project]
 title: Omega Propulsion Bracket System
@@ -226,6 +287,13 @@ section: What I did
 - Designing the bracket system from the ground up and carrying it through manufacturing
 - Designed, quoted, and ordered CNC machined propulsion brackets
 - Work most days across CAD, FEA, and team meetings with almost every team in the vehicle engineering department
+outcome: In progress. I am designing the bracket system from the ground up and carrying it through manufacturing.
+skills: Bracket design, Finite element analysis, Requirements development, Drawings and PLM release, Cross-team collaboration
+challenges: Many of the brackets that fasten the propulsion tubes had not been designed or validated, and the work touches almost every team in vehicle engineering, so requirements and interfaces have to be gathered across teams.
+section: Takeaways
+- Take ownership of gaps you notice.
+- Validation and drawings are part of the design.
+- Talk early to the teams that share your interfaces.
 
 [project]
 title: GNOR Autonomous Marine Vessel
@@ -252,6 +320,11 @@ section: Hull construction and structural design
 section: Team coordination
 - Assigned roles across the 4-person team, set build milestones, and managed integration between mechanical and electrical subsystems throughout the project
 outcome: Competed and finished top 5 in the class. The vessel completed the autonomous navigation course with stable heading control and reliable obstacle avoidance; validated entirely through on-water testing.
+skills: Closed-loop control, Embedded C++, IMU integration, Laser cutting and fabrication, Team leadership
+challenges: A four-person team had to design a hull, a propulsion and steering system, and the software on a fixed timeline, and everything was validated on the water.
+section: Takeaways
+- Coordination and timelines matter as much as the design.
+- Closed-loop heading control needs real on-water testing.
 
 [project]
 title: Waveguide Support Brackets
@@ -269,6 +342,12 @@ section: What I did
 - Designed, quoted, and ordered CNC machined waveguide feed brackets
 - Install brackets and other hardware onto the spacecraft
 - Present design rationale and analysis results in Critical Design Reviews
+outcome: In progress. The brackets are installed on the spacecraft, and the universal support plate is in design.
+skills: Finite element analysis (Ansys), Aluminum and PEEK materials, CNC machining design, Design reviews, Vendor quoting
+challenges: Five waveguide configurations each used a different support plate, so a universal plate has to work across all of them and be validated for launch loads in both aluminum and PEEK.
+section: Takeaways
+- Standardizing parts reduces the number of drawings to review.
+- Present design rationale and analysis clearly in design reviews.
 
 [project]
 title: Modular Cam-Locking Harness
@@ -294,18 +373,26 @@ section: Adjustability and fit system
 section: Injection molding DFM at sub-inch scale
 - All features designed for injection molding with draft, parting lines, consistent wall thickness, and undercut relief at component scales where DFM errors have no geometric margin to absorb
 outcome: Currently in its second design phase. Spring-loaded gear mechanism designed and under internal review. All components ready for tooling at the current revision.
+skills: Shear and stress analysis, Spring mechanisms, Injection molding DFM, Ergonomics, Design iteration
+challenges: The cam interface had to carry the moment load of an extended umbrella without slipping, while the injection-molded parts were smaller than half an inch. The first design led to a second phase with a spring-loaded gear.
+section: Takeaways
+- Analyze the load at the interface early.
+- Small molded parts need DFM from the start.
+- A second design phase can fix what the first one revealed.
 
 [project]
 title: Tongue Elevator: Pediatric Medical Device
 type: Work
 summary: A medical-grade tongue positioning device for use by a physician during oral procedures on pediatric patients. Geometry driven entirely by anatomical conformance requirements; extensive use of lofts and swept cuts to achieve the organic surface profile the customer specified, with all edges fully radiused to eliminate any sharp features inside the mouth.
 org: Design Launchers, LLC
+skills: Medical device design, Surface modeling (lofts and sweeps), Anatomical fit
 
 [project]
 title: Hand Surgery Medical Device
 type: Work
 summary: A laser-cut and bent aluminum device that allows surgeons to independently position and hold each finger during hand surgery. A comb-based adjustment mechanism allows each finger to be locked to a discrete angle independently.
 org: Design Launchers, LLC
+skills: Sheet metal design, Adjustable mechanisms, Medical device design
 
 [project]
 title: Handheld Motorized Gear System
@@ -334,12 +421,18 @@ section: Mechanical packaging and fabrication
 - Installed Helicoil inserts by hand tapping to reinforce threaded interfaces through repeated prototype assembly cycles
 - Parametrically modeled the bristle guard in multiple configurations to give users control over applied force
 outcome: Metal gear upgrade and turned shaft in active development with international vendors. Custom PCB in progress with EE firm. Product currently transitioning from late prototyping into production specification.
+skills: Drivetrain design, Motor selection, PCB and electronics integration, Prototyping, Vendor coordination
+challenges: Gear slippage led to a metal gear upgrade and a turned shaft, and the work involved international vendors and a custom PCB developed with an electrical engineering firm.
+section: Takeaways
+- A failure in testing can point to a material upgrade.
+- Mechanical and electrical engineers have to coordinate on one product.
 
 [project]
 title: CO₂-Powered Cosmetic Sprayer
 type: Work
 summary: A handheld cosmetic sprayer powered by a CO₂ cartridge, developed through three to four design generations over several months of iterative prototyping. The core engineering challenges were CO₂ cartridge integration and designing a puncture mechanism with reliable, consistent actuation.
 org: Design Launchers, LLC
+skills: Mechanism design, Pressure cartridge integration, Iterative prototyping
 
 [project]
 title: Multi-Function Compound Applicator
@@ -365,6 +458,11 @@ section: Field-efficiency and DFM
 - Reloadable cartridges for fast field reloading without device disassembly
 - All components designed with full DFM compliance from the first modeled feature; manufacturing-ready without geometry changes for tooling
 outcome: Currently in its second prototyping phase. Profile and feature improvements validated in the current iteration through Design Launchers, LLC.
+skills: Injection molding DFM, Modular design, Mechanism design, Ergonomics, Prototyping
+challenges: The tool has to work across material viscosities from thin compounds to heavy spackle, and fit three functions into one handheld form with modular nozzles and reloadable cartridges.
+section: Takeaways
+- Design for the full range of materials the user will see.
+- Modular parts add flexibility.
 
 [project]
 title: Linear-to-Compound Motion Mechanism
@@ -386,6 +484,11 @@ section: DFM-first modeling approach
 - Opposing draft angle requirements on interfacing components resolved through parting line placement strategy rather than added complexity
 - Magnet integration within the dense assembly required careful pocket geometry and pull-direction coordination with draft requirements
 outcome: Currently in active prototyping through Design Launchers, LLC.
+skills: Mechanism kinematics, Tolerancing, Injection molding DFM, Magnet integration, CAD assemblies
+challenges: Performance had to stay consistent across the full stroke while designing around opposing draft angles in a dense, magnet-integrated assembly.
+section: Takeaways
+- Model with molding in mind from the start.
+- Check the mechanism across the entire stroke.
 
 [project]
 title: Wall-Mounted Modular Organizer
@@ -412,24 +515,32 @@ section: Part reuse and mold count minimization
 section: Competitive analysis and structural improvement
 - Identified the single-arm configuration used by market-leading products as the primary structural weakness; designed a two-arm configuration as the fix, significantly increasing lateral load stability
 outcome: Currently in active prototyping phase through Design Launchers, LLC.
+skills: Design for assembly, Injection molding and extrusion, Collapsible structures, Cost reduction, Competitive analysis
+challenges: A product this large has to break down to a size customers can transport and store, which drove retractable gussets, few screws, and standard extrusion sizes.
+section: Takeaways
+- Shipping and storage limits can drive the structure.
+- Reusing parts reduces mold count and cost.
 
 [project]
 title: Eyelet Positioner: Fishing Line Threading Tool
 type: Work
 summary: A compact fishing line threading tool built around a chemically etched metal insert that is subsequently overmolded in plastic. Chemical etching creates surface geometry at tolerances around 20 thousandths of an inch, which the overmold locks onto mechanically; a process that demands precise sequencing between the etching and molding stages to ensure adhesion and dimensional accuracy.
 org: Design Launchers, LLC
+skills: Insert molding, Tight tolerances, Chemical etching
 
 [project]
 title: Whiskey Glasses: World Cup & Super Bowl Editions
 type: Work
 summary: A geometry-driven modeling project focused on translating complex surface patterns into manufacturable glass molds. Each design; a soccer ball, golf ball, and human skull; required precise replication of its defining geometry, from the truncated icosahedron panel layout of the soccer ball to the freeform surface topology of the skull.
 org: Design Launchers, LLC
+skills: Complex surface modeling, Mold design, Geometry for manufacturing
 
 [project]
 title: Colander: Two-Configuration Design
 type: Work
 summary: Designed two configurations varying in handle count and overall size. The project began with drainage performance as the primary objective, then shifted to balance functionality with consumer aesthetic requirements, which drove a redesign of the hole pattern geometry.
 org: Design Launchers, LLC
+skills: Parametric design, Design for function, Configuration design
 
 [project]
 title: PCB Enclosures (DEV and Flight)
@@ -437,6 +548,7 @@ type: Work
 summary: Designed enclosures for thermal performance, with extra surface geometry and vent holes for heat dissipation, heat pack cable management, and standardized flight-approved screw bosses.
 org: Astranis Space Technologies
 tools: Mechanical design
+skills: Thermal design, Enclosure design, Flight hardware
 
 [project]
 title: SolidWorks Fillet Macros
@@ -444,22 +556,19 @@ type: Work
 summary: Wrote and released company-wide macros that auto-fillet large parts, standardize fillet sizing, and flag broken fillet features, which cuts diagnosis time and CNC operations.
 org: Astranis Space Technologies
 tools: Python, SolidWorks API
+skills: Python and SolidWorks API, Automation, CNC-aware design
 
 [about]
 title: About me
-quote: I have wanted to be part of something bigger since I was a kid.
-interests: Hiking | Soccer | Tinkering
-para: I am a mechanical engineering student at UCF who likes building things and figuring out how they work. Since I was a kid, I have wanted to be part of something bigger than myself. The photos below are from when I was younger.
-para: Outside of school and work, I hike and play soccer. I also tinker: taking things apart, building small projects, and testing ideas by hand. It shows up in personal projects like the Automated Card Dealer and the Arduino Desk Pet.
-para: Today I design flight hardware at Astranis. I am looking for internships in aerospace, robotics, and advanced hardware where I can contribute to work that matters.
-gallery: When I was younger
-photo: space-1.jpg
-photo: space-2.jpg
-photo: space-3.jpg
-photo: soccer-1.jpg
-gallery: On the trail
-photo: hiking-1.jpg
-photo: hiking-2.jpg
-# To add a caption, put it after a | symbol, for example:
-# photo: space-1.jpg | My caption here
-# To add another photo group, add a new "gallery: Title" line followed by its photo lines.
+lead: I am a mechanical engineering student at the University of Central Florida, and this fall I am an engineering intern at Astranis in San Francisco.
+story_title: Part of something bigger
+para: Since I was a kid I have wanted to be part of something bigger than myself. For me that started with space. The photos here are from when I was younger, including trips to Kennedy Space Center.
+para: That feeling shaped what I looked for in school and in work. I joined NASA Student Launch, led a four-person team in an autonomous boat competition, and now design brackets and test fixtures for spacecraft at Astranis.
+para: I like projects where many people contribute to one result, and I want to keep working on aerospace and robotics hardware.
+gallery: Story
+photo: space-1.jpg | In an astronaut costume
+photo: space-2.jpg | In front of the shuttle boosters
+hobby: Hiking | I like hiking a lot. | hiking-1.jpg
+hobby: Soccer | I play soccer. This photo is from when I was a kid. | soccer-1.jpg
+hobby: Tinkering | I like to tinker: taking things apart, building small projects, and testing ideas by hand. The Arduino Desk Pet is one of them. | arduino-pet-3.jpg
+looking: I am looking for internships in aerospace, robotics, and advanced hardware. If you want to talk about a project or an opportunity, send me an email or take a look at my resume.
