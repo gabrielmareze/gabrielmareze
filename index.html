@@ -127,35 +127,27 @@ a.card:hover{background:#f2f6f9}
 .drawing.gl .jet{display:none}
 
 .hero-img{width:100%;height:auto;max-height:460px;object-fit:contain;display:block}
-/* About page layout */
-.about-page{padding-top:34px}
-.about-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;padding:24px 0 54px;border-bottom:1px solid var(--line)}
-.about-hero .pt{font-size:clamp(46px,6.8vw,82px);line-height:.98;max-width:10ch;margin:12px 0 20px}
-.about-hero .lead2{font-size:clamp(19px,2vw,23px);line-height:1.55;max-width:49ch;margin:0}
-.about-hero .ab-ph{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
-.ab-ph figure{margin:0;border:1px solid var(--line);background:var(--paper)}
-.ab-ph img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
-.ab-ph figure:nth-child(2){margin-top:28px}
-.ab-ph figcaption{font-size:13px;color:var(--soft);padding:8px 10px}
-.about-kicker{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--or);font-weight:600;margin:0 0 8px}
-.about-section{padding:36px 0 42px;border-bottom:1px solid var(--line)}
-.about-section h2{margin:0 0 22px;padding:0;border:0;font-size:clamp(28px,3vw,38px)}
-.ab-story{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:start}
-.ab-story p{font-size:17px;line-height:1.75;color:var(--soft);margin:0 0 16px;max-width:62ch}
-.about-callout{margin-top:26px;padding:22px 24px;background:var(--paper);border-left:3px solid var(--or);font:600 clamp(23px,3vw,34px)/1.15 "Barlow Condensed",sans-serif;max-width:25ch}
-.ab-hob{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.ab-hob figure{margin:0;border:1px solid var(--line);background:var(--paper);overflow:hidden}
-.ab-hob img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 35%;display:block;transition:transform .45s}
-.ab-hob figure:hover img{transform:scale(1.035)}
-.ab-hob figure>div{padding:15px 18px 18px}
-.ab-hob h3{font-size:25px;margin:0 0 7px}
-.ab-hob p{font-size:15px;line-height:1.6;color:var(--soft);margin:0}
-.about-cta{display:flex;justify-content:space-between;align-items:center;gap:28px;padding:38px 0 8px}
-.about-cta h2{font-size:clamp(30px,3vw,40px);margin:0 0 8px;padding:0;border:0}
-.about-cta p{max-width:60ch;color:var(--soft);margin:0}
-.about-cta-actions{display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0}
-@media(max-width:820px){.about-hero{grid-template-columns:1fr;gap:28px}.about-hero .pt{max-width:12ch}.about-hero .ab-ph{max-width:520px}.ab-story{grid-template-columns:1fr;gap:4px}.ab-hob{grid-template-columns:1fr 1fr}.about-cta{align-items:flex-start;flex-direction:column}}
-@media(max-width:520px){.ab-hob{grid-template-columns:1fr}.about-hero{padding-top:12px}.about-hero .ab-ph{gap:8px}.ab-ph figure:nth-child(2){margin-top:18px}}
+.lead2{font-size:22px;line-height:1.5;max-width:34ch;margin:18px 0 0;color:var(--soft)}
+.ab-top{display:grid;grid-template-columns:1fr 1.15fr;gap:48px;align-items:center}
+.ab-eye{font:600 14px Barlow,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin-bottom:14px}
+.ab-h1{font-size:clamp(44px,6.4vw,84px);font-weight:700;line-height:1}
+.ab-hero{margin:0;position:relative;aspect-ratio:16/9;overflow:hidden}.ab-hero img{width:100%;height:100%;object-fit:cover;display:block}
+.ab-hero figcaption{position:absolute;right:0;bottom:0;background:rgba(45,63,80,.88);color:#fff;font-size:13px;padding:7px 14px;display:flex;gap:6px;align-items:center}
+.ab-pil{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:40px 0}
+.ab-pil div{display:flex;align-items:center;justify-content:center;gap:16px;padding:22px 12px;border-left:1px solid var(--line)}.ab-pil div:first-child{border-left:0}
+.ab-pil svg{width:40px;height:40px;stroke:var(--ink);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.ab-pil span{font:600 13px Barlow,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.ab h2{font-size:38px;margin:0 0 16px;padding:0;border:0}
+.ab-idea{display:grid;grid-template-columns:1fr 1.5fr;gap:32px;align-items:start}
+.ab-feat{display:grid;grid-template-columns:1fr 1fr;gap:24px}.ab-feat figure{margin:0}
+.ab-feat img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.ab-feat h3,.ab-hob h3{font:600 19px Barlow,sans-serif;margin:12px 0 2px}
+.ab-feat p,.ab-hob p{font-size:14px;color:var(--soft);margin:0}
+.ab-sec{border-top:1px solid var(--line);margin-top:48px;padding-top:32px}
+.ab-hob{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.ab-hob figure{margin:0}
+.ab-hob img{width:100%;aspect-ratio:16/6;object-fit:cover;object-position:50% 40%;display:block}
+nav ul a{position:relative}nav ul a.on:not(.navcta){color:var(--ink)}nav ul a.on:not(.navcta)::after{content:"";position:absolute;left:0;right:0;bottom:-21px;height:2px;background:var(--acc)}
+@media(max-width:820px){.ab-top,.ab-idea,.ab-feat,.ab-hob{grid-template-columns:1fr}.ab-hob img{aspect-ratio:4/3}.ab-pil{grid-template-columns:1fr}.ab-pil div{border-left:0;border-top:1px solid var(--line)}.ab-pil div:first-child{border-top:0}}
 </style>
 </head>
 <body>
@@ -200,12 +192,12 @@ for(const raw of t.split(/\r?\n/)){const line=raw.trim();
  if(raw[0]==='#')continue;
  let m=line.match(/^\[(\w+)\]$/);
  if(m&&raw[0]==='['){type=m[1].toLowerCase();key=null;sec=null;
-  if(type==='site')cur=o.site;else if(type==='job'){cur={items:[]};o.jobs.push(cur)}else if(type==='project'){cur={sections:[]};o.projects.push(cur)}else if(type==='about'){cur=o.about={paras:[],galleries:[],hobbies:[]}}else cur=null;continue}
+  if(type==='site')cur=o.site;else if(type==='job'){cur={items:[]};o.jobs.push(cur)}else if(type==='project'){cur={sections:[]};o.projects.push(cur)}else if(type==='about'){cur=o.about={paras:[],galleries:[],hobbies:[],pillars:[],features:[]}}else cur=null;continue}
  if(type==='stats'||type==='skills'){const a=line.split('|');(type==='stats'?o.stats:o.skills).push([a[0].trim(),a.slice(1).join('|').trim()]);continue}
  if(!cur)continue;
  if(line.startsWith('- ')){const v=line.slice(2).trim();if(type==='project'){if(!sec){sec={h:'',items:[]};cur.sections.push(sec)}sec.items.push(v)}else cur.items.push(v);key='*b';continue}
  m=line.match(/^([a-z_]+):\s*(.*)$/);
- if(m&&raw[0]!==' '&&raw[0]!=='\t'){key=m[1];if(type==='about'&&key==='para'){cur.paras.push(m[2]);key=null;continue}if(type==='about'&&key==='hobby'){const q=m[2].split('|').map(s=>s.trim());cur.hobbies.push({t:q[0],x:q[1]||'',f:q[2]||''});key=null;continue}if(type==='about'&&key==='gallery'){cur.galleries.push({t:m[2],photos:[]});key=null;continue}if(type==='about'&&key==='photo'){let g=cur.galleries[cur.galleries.length-1];if(!g){g={t:cur.photos_title||'Photos',photos:[]};cur.galleries.push(g)}const a=m[2].split('|');g.photos.push({f:a[0].trim(),c:a.slice(1).join('|').trim()});key=null;continue}if(key==='section'&&type==='project'){sec={h:m[2],items:[]};cur.sections.push(sec);key=null}else cur[key]=m[2];continue}
+ if(m&&raw[0]!==' '&&raw[0]!=='\t'){key=m[1];if(type==='about'&&key==='para'){cur.paras.push(m[2]);key=null;continue}if(type==='about'&&key==='pillar'){const q=m[2].split('|').map(s=>s.trim());cur.pillars.push({i:q[0],t:q[1]||''});key=null;continue}if(type==='about'&&key==='feature'){const q=m[2].split('|').map(s=>s.trim());cur.features.push({f:q[0],t:q[1]||'',x:q[2]||''});key=null;continue}if(type==='about'&&key==='hobby'){const q=m[2].split('|').map(s=>s.trim());cur.hobbies.push({t:q[0],x:q[1]||'',f:q[2]||''});key=null;continue}if(type==='about'&&key==='gallery'){cur.galleries.push({t:m[2],photos:[]});key=null;continue}if(type==='about'&&key==='photo'){let g=cur.galleries[cur.galleries.length-1];if(!g){g={t:cur.photos_title||'Photos',photos:[]};cur.galleries.push(g)}const a=m[2].split('|');g.photos.push({f:a[0].trim(),c:a.slice(1).join('|').trim()});key=null;continue}if(key==='section'&&type==='project'){sec={h:m[2],items:[]};cur.sections.push(sec);key=null}else cur[key]=m[2];continue}
  if(key==='*b'){const a=type==='project'?sec.items:cur.items;a[a.length-1]+=' '+line;continue}
  if(key)cur[key]+=' '+line}
 return o}
@@ -229,13 +221,17 @@ function init(){const s=S.site;
  $('#foot').innerHTML=`<span>${esc(s.footer)}</span><a href="mailto:${esc(s.email)}">${esc(s.email)}</a>`;
  if(!S.about){$('#navabout').style.display='none';$('#aboutbtn').style.display='none'}
  watch($('#home'));route()}
-const about=()=>{const a=S.about,ph=a.galleries[0]?a.galleries[0].photos:[];
-const fig=p=>`<figure><img src="${im(p.f)}" alt="${esc(p.c||'')}">${p.c?`<figcaption>${esc(p.c)}</figcaption>`:''}</figure>`;
-return `<div class="about-page"><a class="back" href="#projects">Back to home</a>
-<section class="about-hero"><div><div class="about-kicker">About / Mechanical engineering</div><h1 class="pt">${esc(a.title||'I build things that have to work.')}</h1><p class="lead2">${esc(a.lead)}</p></div>${ph.length?`<div class="ab-ph">${ph.map(fig).join('')}</div>`:''}</section>
-<section class="about-section"><div class="about-kicker">How I work</div><h2>${esc(a.story_title||'From idea to hardware')}</h2><div class="ab-story"><div>${a.paras.slice(0,2).map(x=>`<p>${esc(x)}</p>`).join('')}</div><div>${a.paras.slice(2).map(x=>`<p>${esc(x)}</p>`).join('')}<div class="about-callout">I like solving the problem in front of me, then building something that proves the solution works.</div></div></div></section>
-${a.hobbies.length?`<section class="about-section"><div class="about-kicker">Away from the workbench</div><h2>Outside of engineering</h2><div class="ab-hob">${a.hobbies.map(h=>`<figure>${h.f?`<img src="${im(h.f)}" alt="${esc(h.t)}">`:''}<div><h3>${esc(h.t)}</h3><p>${esc(h.x)}</p></div></figure>`).join('')}</div></section>`:''}
-${a.looking?`<section class="about-cta"><div><div class="about-kicker">Let's connect</div><h2>Have something worth building?</h2><p>${esc(a.looking)}</p></div><div class="about-cta-actions"><a class="btn solid" href="mailto:${esc(S.site.email)}">Email me</a><a class="btn" data-resume href="#">Download Resume</a></div></section>`:''}
+const PIN='<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>';
+const ICON={
+satellite:'<svg viewBox="0 0 24 24"><g transform="rotate(45 12 12)"><rect x="9.5" y="9" width="5" height="6"/><rect x="2" y="9" width="5.5" height="6"/><rect x="16.5" y="9" width="5.5" height="6"/><path d="M7.5 12h2M14.5 12h2M12 9V6M12 15v3"/></g></svg>',
+gear:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="7"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9L7 7M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>',
+cube:'<svg viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></svg>'};
+const about=()=>{const a=S.about,hp=(a.hero_photo||'').split('|').map(s=>s.trim());
+return `<div class="ab"><div class="ab-top"><div><div class="ab-eye">${esc(a.eyebrow||'About')}</div><h1 class="ab-h1">${esc(a.title||'About me')}</h1><p class="lead2">${esc(a.lead)}</p></div>${hp[0]?`<figure class="ab-hero"><img src="${im(hp[0])}" alt="${esc(hp[1]||'Portrait')}">${hp[1]?`<figcaption>${PIN}${esc(hp[1])}</figcaption>`:''}</figure>`:''}</div>
+${a.pillars.length?`<div class="ab-pil">${a.pillars.map(p=>`<div>${ICON[p.i]||''}<span>${esc(p.t)}</span></div>`).join('')}</div>`:''}
+<div class="ab-idea"><div><h2>${esc(a.story_title||'About')}</h2>${a.paras.map(x=>`<p>${esc(x)}</p>`).join('')}</div>${a.features.length?`<div class="ab-feat">${a.features.map(f=>`<figure><img src="${im(f.f)}" alt="${esc(f.t)}"><h3>${esc(f.t)}</h3><p>${esc(f.x)}</p></figure>`).join('')}</div>`:''}</div>
+${a.hobbies.length?`<div class="ab-sec"><h2>${esc(a.hobbies_title||'Outside of engineering')}</h2><div class="ab-hob">${a.hobbies.map(h=>`<figure>${h.f?`<img src="${im(h.f)}" alt="${esc(h.t)}">`:''}<h3>${esc(h.t)}</h3><p>${esc(h.x)}</p></figure>`).join('')}</div></div>`:''}
+${a.looking?`<div class="ab-sec"><h2>What I am looking for</h2><p>${esc(a.looking)}</p><p><a class="btn solid" href="mailto:${esc(S.site.email)}">Email me</a><a class="btn" data-resume href="#">Download Resume</a></p></div>`:''}
 <div class="pn"><a href="#/all">See all projects</a><a href="#projects">Back to home</a></div></div>`};
 const all=()=>`<a class="back" href="#projects">Back to home</a><h1 class="pt">All projects</h1><p class="role">Ordered by what I find most interesting. Entries with a button have their own page.</p><div class="grid" style="margin-top:28px">${PRJ.map((p,i)=>card(p,`Sheet ${i+1} of ${PRJ.length}`)).join('')}</div>`;
 function page(p){const i=PG.indexOf(p),a=PG[(i+PG.length-1)%PG.length],b=PG[(i+1)%PG.length];
@@ -252,7 +248,7 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 function watch(root){root.querySelectorAll('.rv').forEach((el,i)=>{el.style.setProperty('--d',(i%3)*.12+'s');io.observe(el)})}
 function count(n){const t=+n.dataset.n,s=n.dataset.s||'',t0=performance.now();(function f(now){const k=Math.min(1,(now-t0)/1400);n.textContent=Math.round(t*(1-Math.pow(1-k,3)))+(k==1?s:'');if(k<1)requestAnimationFrame(f)})(t0)}
 function show(id){document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));const v=$('#'+id);void v.offsetWidth;v.classList.add('on')}
-function route(){const h=location.hash,m=h.match(/^#\/project\/([\w-]+)/);
+function route(){const h=location.hash,m=h.match(/^#\/project\/([\w-]+)/);document.querySelectorAll('nav ul a:not(.navcta)').forEach(a=>a.classList.toggle('on',a.getAttribute('href')===h));
 if(h==='#/about'&&S.about){$('#pbody').className='proj wide';$('#pbody').innerHTML=about();show('project');scrollTo(0,0);watch($('#pbody'));return}
 if(h==='#/all'){$('#pbody').className='proj wide';$('#pbody').innerHTML=all();show('project');scrollTo(0,0);watch($('#pbody'));return}
 if(m){const p=PG.find(x=>x.slug==m[1]);if(p){$('#pbody').className='proj';$('#pbody').innerHTML=page(p);show('project');scrollTo(0,0);watch($('#pbody'));return}}
