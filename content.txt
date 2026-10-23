@@ -22,21 +22,13 @@
 #  "section: Name" starts a group of bullets under Design and engineering.
 #  "section: * Name" makes its own heading. "section: Takeaways" is special.
 #
-# ABOUT PAGE KEYS (the [about]
-[about]
-title: I build things that have to work.
-lead: I am a mechanical engineering student at UCF, currently designing spacecraft hardware at Astranis in San Francisco. I like working across the full engineering process: understanding the problem, designing parts, checking the details, and getting hardware built.
-story_title: From idea to hardware
-para: At Astranis, I design and analyze mechanical hardware for satellites, including waveguide support brackets and test fixtures. I use SolidWorks and Ansys FEA to develop designs, validate them, and prepare hardware for release.
-para: Before that, I worked in product development at Design Launchers, taking projects from early sketches and CAD through prototypes, manufacturing drawings, and vendor coordination. I enjoy figuring out why something is not working, finding the root cause, and improving the design.
-para: I have also worked on an autonomous boat through NASA Student Launch and built personal projects like an automated card dealer. I am most interested in mechanical design, robotics, and hardware where the details matter and different engineering disciplines come together.
-gallery: A little background
-photo: space-1.jpg | A childhood astronaut costume
-photo: space-2.jpg | At the Space Shuttle
-hobby: Hiking | I like getting outside, exploring new trails, and visiting new places. | hiking-1.jpg
-hobby: Soccer | I have played soccer since I was a kid, and still enjoy playing whenever I can. | soccer-1.jpg
-hobby: Tinkering | Outside work, I like taking things apart, building small projects, and testing ideas by hand. The Arduino Desk Pet is one example. | arduino-pet-3.jpg
-looking: I am interested in mechanical design, robotics, and advanced hardware. If you would like to talk about a project or an opportunity, send me an email or take a look at my resume.
+# ABOUT PAGE KEYS (the [about] block at the bottom)
+#  eyebrow, title, lead,
+#  "hero_photo: file.jpg | caption" (the big photo at the top right),
+#  "pillar: icon | label" (repeat; icons are satellite, gear, cube),
+#  story_title, para (repeat for each paragraph),
+#  "feature: file.jpg | Title | small text" (the two photos next to the story),
+#  hobbies_title, "hobby: Title | text | file.jpg" (repeat), looking.
 #
 # RESUME: replace the file Gabriel_Mareze_Resume.pdf with a new PDF that
 # has the same name and the Download Resume buttons will open the new one.
@@ -549,3 +541,21 @@ summary: Wrote and released company-wide macros that auto-fillet large parts, st
 org: Astranis Space Technologies
 tools: Python, SolidWorks API
 skills: Python and SolidWorks API, Automation, CNC-aware design
+
+[about]
+eyebrow: About
+title: I build things that have to work.
+lead: Mechanical engineering student at UCF. Currently designing spacecraft hardware at Astranis.
+hero_photo: about-hero.jpg | San Francisco, CA · Fall 2026
+pillar: satellite | Spacecraft hardware
+pillar: gear | Mechanical design
+pillar: cube | Prototyping & test
+story_title: From idea to hardware
+para: I like working across the full engineering process: understanding the problem, designing parts, checking the details, and getting hardware built. At Astranis, I design and release mechanical hardware for satellite systems. Before that, I worked on product development, prototypes, and manufacturing-ready designs at Design Launchers.
+feature: about-spacecraft.jpg | Spacecraft mechanical design | Astranis · FEA, CAD, flight hardware
+feature: about-product.jpg | Product development | Design Launchers · CAD, prototyping, DFM
+hobbies_title: Outside the lab
+hobby: Hiking | Trails, fresh air, and a good view. | hiking-1.jpg
+hobby: Soccer | Played since I was a kid. Still my favorite way to clear my head. | soccer-1.jpg
+hobby: Tinkering | Building small projects, learning new things, and turning ideas into real hardware. | arduino-pet-3.jpg
+looking: I am looking for internships in aerospace, robotics, and advanced hardware. If you want to talk about a project or an opportunity, send me an email or take a look at my resume.
