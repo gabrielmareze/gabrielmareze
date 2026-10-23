@@ -549,17 +549,3 @@ org: Astranis Space Technologies
 tools: Python, SolidWorks API
 skills: Python and SolidWorks API, Automation, CNC-aware design
 
-[about]
-title: About me
-lead: I am a mechanical engineering student at the University of Central Florida, and this fall I am an engineering intern at Astranis in San Francisco.
-story_title: Part of something bigger
-para: Since I was a kid I have wanted to be part of something bigger than myself. For me that started with space. The photos here are from when I was younger, including trips to Kennedy Space Center.
-para: That feeling shaped what I looked for in school and in work. I joined NASA Student Launch, led a four-person team in an autonomous boat competition, and now design brackets and test fixtures for spacecraft at Astranis.
-para: I like projects where many people contribute to one result, and I want to keep working on aerospace and robotics hardware.
-gallery: Story
-photo: space-1.jpg | In an astronaut costume
-photo: space-2.jpg | In front of the shuttle boosters
-hobby: Hiking | I like hiking a lot. | hiking-1.jpg
-hobby: Soccer | I play soccer. This photo is from when I was a kid. | soccer-1.jpg
-hobby: Tinkering | I like to tinker: taking things apart, building small projects, and testing ideas by hand. The Arduino Desk Pet is one of them. | arduino-pet-3.jpg
-looking: I am looking for internships in aerospace, robotics, and advanced hardware. If you want to talk about a project or an opportunity, send me an email or take a look at my resume.
