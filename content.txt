@@ -548,4 +548,3 @@ summary: Wrote and released company-wide macros that auto-fillet large parts, st
 org: Astranis Space Technologies
 tools: Python, SolidWorks API
 skills: Python and SolidWorks API, Automation, CNC-aware design
-
