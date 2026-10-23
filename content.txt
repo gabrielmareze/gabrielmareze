@@ -23,6 +23,7 @@
 #  "section: * Name" makes its own heading. "section: Takeaways" is special.
 #
 # ABOUT PAGE KEYS (the [about]
+[about]
 title: I build things that have to work.
 lead: I am a mechanical engineering student at UCF, currently designing spacecraft hardware at Astranis in San Francisco. I like working across the full engineering process: understanding the problem, designing parts, checking the details, and getting hardware built.
 story_title: From idea to hardware
