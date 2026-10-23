@@ -94,31 +94,28 @@ place: Orlando, FL
 # =====================================================================
 
 [project]
-title: Autonomous Warehouse Robot Fleet
+title: Autonomous Warehouse Robot
 main: yes
 type: Work
-summary: Root-caused chassis instability and redesigned a fleet robot that had no room for extra structure.
+summary: Traced a roll and wheel-splay problem to its causes and redesigned the chassis, which led to a 100-unit follow-on order.
 org: Design Launchers, LLC
-tools: SolidWorks, tolerance analysis, GD&T
+tools: SolidWorks, hand calculations, mass/CG simulation, GD&T
 role: Product Development Engineer Associate
-period: 2025 to Present
+period: 2025 to 2026
 images: warehouse-robot-1.jpg, warehouse-robot-2.jpg
 illustrative: yes
 note: Paid client project through Design Launchers, LLC. Due to NDA restrictions, images and proprietary design details have been omitted.
-overview: A year-long collaborative project developing the full physical architecture of a networked warehouse navigation robot fleet, working directly alongside the client’s engineering team at Design Launchers, LLC. Scope included root-cause failure analysis, structural redesign, tolerance stack management, and complete manufacturing documentation for a highly constrained chassis with essentially no margin for additional structure.
-section: Chassis instability root cause and redesign
-- Root-caused excessive roll during driving tests to an unbalanced 4-cell battery layout and undersized caster wheels failing under dynamic load
-- Redesigned to a symmetric 2-2 battery split, distributing mass evenly without adding structure or increasing chassis footprint
-- Routed a C-section metal extrusion through the chassis to maximize second moment of area at wheel support interfaces; coordinated routing around a dense existing component layout with no margin for error
-section: Drive wheel constraint system
-- Identified outward splay of drive wheels under load as a navigation accuracy failure mode causing positional drift
-- Designed custom constraint brackets with auxiliary caster wheels to redistribute load away from primary drive wheels and eliminate splay under operating conditions
-section: Tolerance stack and manufacturing documentation
-- Managed tolerance stacks across a large number of interdependent components on a chassis where stack-up errors had no room to be absorbed
-- Generated full manufacturing drawing packages for all physical components; all drawings currently in production
-outcome: All physical components in active manufacturing. Redesigned chassis and constraint brackets resolved both the instability and wheel splay identified during testing; robot has completed structured driving validation.
+overview: A fleet of autonomous warehouse robots built for a client of Design Launchers. I worked on the physical design of the robot alongside the client’s engineering team, covering the chassis, the structure around the wheels, and the manufacturing drawings.
+section: * Problem
+- The robot rolled excessively in driving tests, and the drive wheels splayed outward under load, which caused positional drift.
+section: * What I Did
+- Traced the roll to an unbalanced 4-cell battery layout and undersized casters, and confirmed it with hand calculations and mass/CG simulations. Redesigned 15 components to fix it.
+- Moved to a symmetric 2-2 battery split, which balanced the robot without adding structure or growing the footprint.
+- Designed constraint brackets with auxiliary casters to take load off the drive wheels and stop the splay.
+- Routed a C-section extrusion through the chassis to stiffen the wheel supports in a dense layout.
+- Redlined 28 manufacturing prints and caught tolerance errors and a material mismatch before release.
+outcome: 20% more payload than competing platforms at under $1,000 per unit. The client placed a follow-on order for 100 units.
 skills: Root-cause analysis, Stability and center of gravity, GD&T and tolerance stacks, Design to cost, Manufacturing drawings
-challenges: The chassis became unstable during development and the drive wheels splayed under load, with very little room to add structure. Fixing it meant finding the root cause first, then keeping the tolerance stack manageable across the full drawing package.
 section: Takeaways
 - Find the root cause before changing the design.
 - A tight package decides where the structure can go.
@@ -128,27 +125,24 @@ section: Takeaways
 title: NASA Student Launch: Air-Brakes
 main: yes
 type: Club
-summary: Closed-loop PID air-brakes on an ESP32 that trim a rocket toward a 4,850 ft apogee.
+summary: A PID-controlled airbrake system on an ESP32 that trims a rocket toward a 4,850 ft apogee, flown at full scale.
 org: NASA Student Launch, Project Zenith
 tools: C++, ESP32, SolidWorks, PID control
 role: Avionics Specialist, Controls Sub-team
 period: Fall 2024 to Spring 2025
 images: zenith-1.jpg, zenith-2.jpg
-overview: Project Zenith competed in the NASA Student Launch Initiative, targeting a precise apogee of 4,850 ft AGL. As Avionics Specialist on the Controls sub-team, I owned the full development cycle of the autonomous air-brake system: closed-loop PID control, embedded firmware, flight electronics, and mechanical redesign following a sub-scale failure. The system used real-time barometric altitude feedback to deploy four drag-modulating flaps and trim the vehicle’s apogee within feet of target.
-section: PID control system development
-- Implemented full PID control logic in C++ on an ESP32, tuning gains against simulated altitude profiles before flight
-- Integrated a barometric altimeter as the feedback sensor; the controller computed flap deflection commands each loop cycle to drive predicted apogee toward target
-- Added SD card data logging to capture in-flight state for post-flight analysis and gain refinement
-section: Sub-scale failure root cause and redesign
-- Root-caused in-flight control system shutdown to a battery connection that vibrated loose under launch loads
-- Redesigned the electronics housing in SolidWorks to consolidate all components on one side, eliminating wire routing through the flap mechanism
-- Switched to hard-wired connections and strain-relieved harnesses to prevent recurrence under full-scale vibration
-section: Electronics fabrication and system documentation
-- Sourced and quoted all flight electronics; soldered flight hardware and assembled the avionics bay
-- Contributed to PDR and CDR technical reports covering control system design, electronics, and test procedures per NASA safety standards
-outcome: The redesigned system achieved repeatable, precise drag modulation validated across subscale and full-scale flights. Rocket successfully launched and recovered in summer 2025 with the air-brake system performing as designed.
+overview: Project Zenith was UCF’s entry in the NASA Student Launch competition, with a target apogee of 4,850 ft. I worked on the airbrake system that adjusts the rocket’s altitude in flight: the control code, the flight electronics, and the airbrake design.
+section: * Problem
+- The rocket was simulated to overshoot its 4,850 ft target by about 380 ft, so the airbrakes had to shed that in flight.
+- During a sub-scale flight, the control system shut down mid-flight.
+section: * What I Did
+- Researched airbrake options, chose the design, and drafted the first iterations.
+- Wrote a PID controller on an ESP32 that reads a barometric altimeter and drives four flaps, tuned against simulated altitude profiles.
+- Traced the shutdown to an improperly soldered battery connection that came loose under launch loads.
+- Redesigned the electronics housing so all components sit on one side, with no wiring through the flap mechanism, and switched to hard-wired, strain-relieved connections.
+- Sourced and quoted the flight electronics and soldered the flight hardware.
+outcome: Sub-scale flights landed within an average of 2.5 ft of target apogee. The full-scale rocket launched and was recovered in summer 2025 with the airbrake system working as designed.
 skills: PID control, Embedded programming (ESP32), Flight simulation (OpenRocket), Sensor integration, Debugging and failure analysis
-challenges: A subscale failure had to be root-caused and the mechanism redesigned. The controller also had to trim a rocket toward a 4,850 ft apogee against a simulated overshoot, and an in-flight power failure was traced to an unsoldered battery connection.
 section: Takeaways
 - Check wiring and connections before blaming the software.
 - Subscale flights are the cheapest place to find failures.
@@ -158,59 +152,30 @@ section: Takeaways
 title: Automated Card Dealer
 main: yes
 type: Personal
-summary: Counts, deals, and stacks cards using servos, a stepper, and IR sensing.
+summary: Deals to multiple players using servos, a stepper, and IR sensing, with a stopper roller that fixed card jams.
 org: Personal project
 tools: SolidWorks, ESP32, PCA9685, FDM printing
 role: Solo Project
-period: 2025 to Present
+period: 2026 to Present
 images: card-dealer-1.jpg, card-dealer-2.jpg
-overview: A fully functional automated card dealer built from scratch as a personal mechatronics project. The system handles the complete card-handling sequence; count, deal, and stack; using a custom mechanical architecture driven by a mixed servo and stepper motor system coordinated through a PCA9685 PWM controller. Housing is fully 3D-printed, control runs on an ESP32, and the user interface is an OLED display with physical input.
-section: Multi-actuator coordination and embedded control
-- Coordinated multiple servo channels and a stepper motor through a PCA9685 PWM controller driven by an ESP32, managing timing and sequencing across the full deal-shuffle cycle
-- Implemented IR sensor feedback to detect card presence and count; sensor state triggers motor actions and prevents mis-deals
-- Tuned servo travel limits and stepper microstepping for reliable card handling across normal card thickness variation
-section: Mechanical architecture
-- Designed the full card path mechanism; feed, eject, and deal routing; around FDM printing tolerances and available motor torque
-- Iterated housing geometry through multiple print-test cycles; key challenge was achieving consistent grip force without damaging card faces
-- All structural parts parametrically modeled in SolidWorks with print orientation, wall thickness, and fastener access considered from the first version
-section: User interface
-- Menu-driven OLED interface for selecting game type, player count, and deal order; input handled through physical buttons wired to ESP32 GPIO
-outcome: System reliably completes deal and shuffle cycles across standard card decks. Ongoing work targets shuffle consistency and wireless control via the ESP32’s WiFi interface.
+overview: A card dealer I designed and built on my own that counts, shuffles, and deals a standard deck to multiple players. The housing is 3D printed, and an ESP32 runs the motors, sensors, and menu.
+section: * Problem
+- Cards jammed because the card beneath the one being launched tended to feed along with it.
+section: * What I Did
+- Added a stopper roller at the back that holds the second card in place while the top card launches.
+- Sized the card path for standard cards so it handles a full deck, and iterated the grip through repeated print-test cycles to move cards without marking them.
+- Coordinated servos and a stepper motor through a PCA9685 on an ESP32. The stepper rotates the dealer on an axis to deal to different players.
+- Added IR sensors to detect card presence and count, which prevents mis-deals.
+- Added front buttons and an OLED display so the user sets the number of players, cards per player, and cards dealt per turn. A speaker is built in.
+outcome: Completes deal and shuffle cycles reliably on standard decks. Shuffle consistency and wireless control are the next steps.
 skills: Mechanism design, Servo and stepper control, Embedded programming, Sensor integration, FDM 3D printing
-challenges: Servos and a stepper motor have to work in sequence, and cards are unforgiving, so small errors cause jams or misdeals. Shuffle consistency is still being improved.
 section: Takeaways
 - Coordinate several actuators with a clear sequence of states.
 - Sensors catch errors the mechanism cannot.
 - Design the mechanism and the firmware together.
 
 [project]
-title: Reaction Wheel Test Fixture
-main: yes
-type: Work
-summary: A 3D printed fixture that places calibrated magnets at precise Gauss levels to find a sensor switching threshold.
-org: Astranis Space Technologies
-tools: SolidWorks, 3D printing, Altium
-images: rw-fixture-1.jpg
-role: Mechanical Engineering Intern
-period: Aug 2026 to Present
-overview: I own the test fixtures used for reaction wheel testing. The fixture positions calibrated magnets at precise Gauss levels from a PCB-mounted Hall-effect sensor to find the sensor’s switching threshold.
-section: What I did
-- Designed a 3D printed fixture that positions calibrated magnets at precise Gauss levels
-- Paired the Hall-effect sensor with actuators that give position, velocity, and acceleration feedback
-- Worked in the PCB lab and co-designed parts that aid PCB manufacturing
-outcome: In use. The fixture is used to find the Hall-effect sensor switching threshold for reaction wheel testing.
-skills: Test fixture design, Sensor characterization, 3D printing, Working with electronics teams, Precision positioning
-challenges: The fixture has to place calibrated magnets at precise field strengths relative to a PCB-mounted sensor, so repeatable positioning matters most. It also has to work with the sensor feedback and be easy for the PCB lab to use.
-section: * Fixture hardware
-- 3D printed black housing with a green insert
-- Rotating dial with a marked scale, holding a magnet at the top
-- PCB mounted on standoffs under the housing, with red terminals on the front edge
-section: Takeaways
-- Design a test fixture around the measurement it has to make.
-- Work with the electronics team early.
-
-[project]
-title: Canoe Cart (Yak Thang)
+title: Canoe Cart
 main: yes
 type: Work
 summary: A rivet-assembled sheet metal cart that carries up to 160 lbs of kayak or canoe.
@@ -221,57 +186,77 @@ period: 2025
 images: canoe-cart-1.jpg, canoe-cart-2.jpg
 illustrative: yes
 note: Paid client project through Design Launchers, LLC. Due to NDA restrictions, images and proprietary design details have been omitted.
-overview: A sheet metal canoe transport cart designed to carry a loaded kayak or canoe from vehicle to water, supporting up to 160 lbs across two large pneumatic drive wheels and two smaller stabilizing wheels. The hull rests on a rail cradle system secured with straps. The project was more technically constrained than the product category suggests; the entire structure is sheet metal, meaning every structural and geometric decision had to work within the limits of what can be bent, cut, and riveted from flat stock. End-user self-assembly was a hard requirement, which ruled out welding as a joining method and made rivet joint design and part alignment critical.
-section: Bend radius and wall thickness management
-- Balancing sheet thickness against required bend radii was the primary structural constraint throughout; thicker stock for load capacity, tighter radii for geometry, and the two work against each other
-- Every bend feature was evaluated against minimum bend radius limits for the selected gauge to prevent cracking at the outer fiber
-section: Corner and intersection workarounds
-- Sheet metal corners at intersecting bend lines create material interference that cannot be resolved by bending alone
-- Addressed through relief cuts and slit-notched corners that relieve the material before bending
-- These features had to be sized correctly: too small and the bend still tears; too large and the corner loses structural integrity
-- The workarounds were designed into the flat pattern from the start, not added as fixes after the geometry was set
-section: Riveted construction for customer assembly
-- First iteration used welding; redesigned to riveted construction to eliminate the need for specialized tools during customer assembly
-- Rivet joint placement was driven by load path; joints at high-stress locations were sized and spaced for shear capacity, not just assembly convenience
-- Part count minimized through geometry mirroring: two parts serve double duty on opposite sides of the assembly, reducing unique component count and simplifying the assembly sequence
-section: Rail cradle system
-- Designed the hull support rail geometry to accommodate canoe and kayak hull profiles without requiring hull-specific customization
-- Strap attachment points integrated directly into the rail bends; no separate hardware required
-outcome: Currently in manufacturing. Designed for self-assembly by the end user with no specialized tools. Full sheet metal flat pattern and production drawing package complete through Design Launchers, LLC.
+overview: A sheet metal cart that carries a loaded kayak or canoe from a vehicle to the water. It was a paid client project at Design Launchers, and I designed the sheet metal structure and the manufacturing drawings.
+section: * Problem
+- The cart carries up to 160 lb, customers assemble it themselves, and the whole structure had to be sheet metal. That ruled out welding and limited every shape to what can be bent, cut, and riveted from flat stock.
+section: * What I Did
+- Redesigned the first welded version as a riveted one so customers need no special tools, with rivets placed along the load path and sized for shear.
+- Balanced sheet thickness against bend radius for the chosen gauge to avoid cracking at the outer fiber.
+- Designed slit-notched corners and relief cuts into the flat pattern from the start.
+- Cut the unique part count by using two mirrored parts on opposite sides.
+- Built the rail cradle with strap points bent into the rails, so no extra hardware is needed.
+outcome: In manufacturing. The full flat pattern and production drawing package are complete.
 skills: Sheet metal design, Flat patterns and bend allowance, Design for assembly, Rivet joints, Load path design
-challenges: Bend radii, wall thickness, and corner interferences limited what could be built from flat stock. Welding was ruled out because customers assemble the cart themselves, so the joints had to be redesigned around rivets.
 section: Takeaways
 - Design inside the process: bend limits and flat patterns shape the geometry.
 - The end user’s assembly changes the joint choice.
 - Mirrored parts cut the number of unique components.
 
 [project]
-title: Arduino Desk Pet
+title: Reaction Wheel Test Fixture
 main: yes
-type: Personal
-summary: A desk pet with animated eyes, a servo-driven tail, and EEPROM persistence, improved through hardware testing.
-org: Personal project
-tools: Arduino, C++, EEPROM
-images: arduino-pet-3.jpg, arduino-pet-2.jpg, arduino-pet-1.jpg
-role: Personal project
-overview: A desk pet in a 3D printed, cat-shaped enclosure. An OLED screen shows animated eyes, a micro servo moves its tail, and an Arduino Uno runs the pet’s mood states, which are saved with EEPROM. I improved the design through repeated rounds of hardware testing.
-section: What I did
-- Programmed animated mood states
-- Built a servo-driven tail
-- Used EEPROM for persistence
-- Iterated on the design through hardware testing
-outcome: A working desk pet that shows animated eyes on its screen and moves its tail. The photos show the finished enclosure, the electronics inside it, and the parts during assembly.
-skills: 3D printing and enclosure design, Embedded programming (Arduino C++), Servo and display integration, Packaging electronics, Iterative prototyping
-challenges: Fitting an Arduino Uno, a breadboard, the tail servo, and wiring into a small printed enclosure took several rounds, along with the openings for the USB cable, button, and power jack.
+type: Work
+summary: A 3D printed fixture that holds calibrated magnets at set distances to find the field strength where a sensor trips.
+org: Astranis Space Technologies
+tools: SolidWorks, 3D printing, Altium
+images: rw-fixture-1.jpg
+role: Mechanical Engineering Intern
+period: Aug 2026 to Present
+overview: A test fixture I designed at Astranis for a Hall-effect sensor used in a spacecraft reaction wheel. It holds a magnet at exact distances from the sensor to find the field strength where the sensor trips. I designed the fixture and the sheet metal housing for the newer version.
+section: * Problem
+- The team needed the field strength at which a Hall-effect sensor trips, measured without the fixture disturbing the field.
+section: * What I Did
+- Designed a stepped tower with a puck that moves down the steps, each step set to a distance that matches a gauss level.
+- Chose 3D printing so the fixture wouldn’t disturb the magnetic field.
+- Printed with a 0.2 mm nozzle and 0.2 mm layers, and checked each part with calipers to keep it in spec.
+- Designed the sheet metal housing for the newer iteration.
+- Worked in the PCB lab and co-designed parts that aid PCB manufacturing.
+outcome: The sensor trips at 55 gauss.
+skills: Test fixture design, Sensor characterization, 3D printing, Working with electronics teams, Precision positioning
+section: * Fixture hardware
+- 3D printed black housing with a green insert
+- Rotating dial with a marked scale, holding a magnet at the top
+- PCB mounted on standoffs under the housing, with red terminals on the front edge
 section: Takeaways
-- Plan the enclosure openings and cable routing together with the electronics layout.
-- Test on the bench before closing the enclosure.
-section: * Build and hardware
-- Arduino Uno as the controller
-- OLED display for the animated eyes
-- 9g micro servo that moves the tail
-- Push button, USB opening, and DC power jack on the front panel, with a battery holder for portable power
-- 3D printed enclosure, designed in separate parts for the body, lid, and display head
+- Design a test fixture around the measurement it has to make.
+- Work with the electronics team early.
+
+[project]
+title: Modular Cam-Locking Harness
+main: yes
+type: Work
+summary: Shear analysis and a spring-loaded gear that lets a harness adjust with one hand.
+org: Design Launchers, LLC
+tools: SolidWorks, shear analysis, injection molding DFM
+role: Lead Product Development Engineer Associate
+period: 2026
+images: harness-1.jpg, harness-2.jpg
+illustrative: yes
+note: Paid client project through Design Launchers, LLC. Due to NDA restrictions, images and proprietary design details have been omitted.
+overview: A wearable harness with a mount that holds an umbrella for the user. The adjustable parts are small injection-molded pieces, and several are under half an inch. It was a paid client project at Design Launchers, and I led both the first and second design phases.
+section: * Problem
+- The cam lock skipped under the moment load from an extended umbrella, and every component had to fit injection-molded parts under half an inch.
+section: * What I Did
+- Ran a shear analysis at the cam interface and found the teeth had too little shear area.
+- Changed the cam geometry to increase shear area without growing the part, from calculated results and not trial and error.
+- Led the redesign to a spring-loaded gear after the first phase. Compressing the spring frees the teeth to reposition the cam and plate angle, and releasing it locks the new position, with one hand, no tools, and no screws.
+- Designed every feature for injection molding, including draft, parting lines, wall thickness, and undercuts, at sizes under half an inch.
+outcome: All components are ready for tooling at the current revision. The spring-loaded design is under internal review.
+skills: Shear and stress analysis, Spring mechanisms, Injection molding DFM, Ergonomics, Design iteration
+section: Takeaways
+- Analyze the load at the interface early.
+- Small molded parts need DFM from the start.
+- A second design phase can fix what the first one revealed.
 
 [project]
 title: Omega Propulsion Bracket System
@@ -350,51 +335,6 @@ section: Takeaways
 - Present design rationale and analysis clearly in design reviews.
 
 [project]
-title: Modular Cam-Locking Harness
-type: Work
-summary: Shear analysis and a spring-loaded gear that lets a harness adjust with one hand.
-org: Design Launchers, LLC
-tools: SolidWorks, shear analysis, injection molding DFM
-role: Lead Product Development Engineer Associate
-period: 2026 to Present
-images: harness-1.jpg, harness-2.jpg
-illustrative: yes
-note: Paid client project through Design Launchers, LLC. Due to NDA restrictions, images and proprietary design details have been omitted.
-overview: A wearable umbrella-mounting system integrated into load-bearing textile harnesses. The core engineering challenge was packaging real consumer adjustability into injection-molded components; some under half an inch; while ensuring the cam-locking interface could handle the moment load generated by an extended umbrella without skipping or failing. The second design phase is focused on eliminating fasteners entirely in favor of a spring-loaded gear mechanism, driven by a complete assembly redesign led by me.
-section: Structural analysis at the cam interface
-- Performed shear analysis at the cam locking interface to identify the failure mode: insufficient tooth shear area causing the cam to skip under umbrella moment load
-- Adjusted cam geometry to increase shear area and prevent skip without increasing the component envelope; solution driven by calculated results, not trial-and-error
-section: Spring-loaded gear redesign; second design phase
-- Led the complete redesign of the adjustment mechanism after both the client and team agreed that minimizing screws was the priority for user experience
-- Conceived and designed a spring-loaded gear system: compressing the spring disengages the gear teeth, allowing the cam position and plate angle to be repositioned freely; releasing returns the spring to lock the new position
-- The mechanism delivers a fast, deliberate, tactilely satisfying action; one hand, no tools, no loose hardware
-section: Adjustability and fit system
-- Multiple independent adjustment points to accommodate a full range of body proportions; sew-on integration features built directly into molded parts; no separate attachment hardware required for textile integration
-section: Injection molding DFM at sub-inch scale
-- All features designed for injection molding with draft, parting lines, consistent wall thickness, and undercut relief at component scales where DFM errors have no geometric margin to absorb
-outcome: Currently in its second design phase. Spring-loaded gear mechanism designed and under internal review. All components ready for tooling at the current revision.
-skills: Shear and stress analysis, Spring mechanisms, Injection molding DFM, Ergonomics, Design iteration
-challenges: The cam interface had to carry the moment load of an extended umbrella without slipping, while the injection-molded parts were smaller than half an inch. The first design led to a second phase with a spring-loaded gear.
-section: Takeaways
-- Analyze the load at the interface early.
-- Small molded parts need DFM from the start.
-- A second design phase can fix what the first one revealed.
-
-[project]
-title: Tongue Elevator: Pediatric Medical Device
-type: Work
-summary: A medical-grade tongue positioning device for use by a physician during oral procedures on pediatric patients. Geometry driven entirely by anatomical conformance requirements; extensive use of lofts and swept cuts to achieve the organic surface profile the customer specified, with all edges fully radiused to eliminate any sharp features inside the mouth.
-org: Design Launchers, LLC
-skills: Medical device design, Surface modeling (lofts and sweeps), Anatomical fit
-
-[project]
-title: Hand Surgery Medical Device
-type: Work
-summary: A laser-cut and bent aluminum device that allows surgeons to independently position and hold each finger during hand surgery. A comb-based adjustment mechanism allows each finger to be locked to a discrete angle independently.
-org: Design Launchers, LLC
-skills: Sheet metal design, Adjustable mechanisms, Medical device design
-
-[project]
 title: Handheld Motorized Gear System
 type: Work
 summary: Drivetrain, power, and PCB work to move a consumer device from prototype toward production.
@@ -426,6 +366,47 @@ challenges: Gear slippage led to a metal gear upgrade and a turned shaft, and th
 section: Takeaways
 - A failure in testing can point to a material upgrade.
 - Mechanical and electrical engineers have to coordinate on one product.
+
+[project]
+title: Arduino Desk Pet
+type: Personal
+summary: A desk pet with animated eyes, a servo-driven tail, and EEPROM persistence, improved through hardware testing.
+org: Personal project
+tools: Arduino, C++, EEPROM
+images: arduino-pet-3.jpg, arduino-pet-2.jpg, arduino-pet-1.jpg
+role: Personal project
+overview: A desk pet in a 3D printed, cat-shaped enclosure. An OLED screen shows animated eyes, a micro servo moves its tail, and an Arduino Uno runs the pet’s mood states, which are saved with EEPROM. I improved the design through repeated rounds of hardware testing.
+section: What I did
+- Programmed animated mood states
+- Built a servo-driven tail
+- Used EEPROM for persistence
+- Iterated on the design through hardware testing
+outcome: A working desk pet that shows animated eyes on its screen and moves its tail. The photos show the finished enclosure, the electronics inside it, and the parts during assembly.
+skills: 3D printing and enclosure design, Embedded programming (Arduino C++), Servo and display integration, Packaging electronics, Iterative prototyping
+challenges: Fitting an Arduino Uno, a breadboard, the tail servo, and wiring into a small printed enclosure took several rounds, along with the openings for the USB cable, button, and power jack.
+section: Takeaways
+- Plan the enclosure openings and cable routing together with the electronics layout.
+- Test on the bench before closing the enclosure.
+section: * Build and hardware
+- Arduino Uno as the controller
+- OLED display for the animated eyes
+- 9g micro servo that moves the tail
+- Push button, USB opening, and DC power jack on the front panel, with a battery holder for portable power
+- 3D printed enclosure, designed in separate parts for the body, lid, and display head
+
+[project]
+title: Tongue Elevator: Pediatric Medical Device
+type: Work
+summary: A medical-grade tongue positioning device for use by a physician during oral procedures on pediatric patients. Geometry driven entirely by anatomical conformance requirements; extensive use of lofts and swept cuts to achieve the organic surface profile the customer specified, with all edges fully radiused to eliminate any sharp features inside the mouth.
+org: Design Launchers, LLC
+skills: Medical device design, Surface modeling (lofts and sweeps), Anatomical fit
+
+[project]
+title: Hand Surgery Medical Device
+type: Work
+summary: A laser-cut and bent aluminum device that allows surgeons to independently position and hold each finger during hand surgery. A comb-based adjustment mechanism allows each finger to be locked to a discrete angle independently.
+org: Design Launchers, LLC
+skills: Sheet metal design, Adjustable mechanisms, Medical device design
 
 [project]
 title: CO₂-Powered Cosmetic Sprayer
